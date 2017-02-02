@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html ng-app="gemStore">
+
+<head>
+  <meta charset="utf-8">
+  <!-- To ensure proper rendering and touch zooming -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- load bootstrap and fontawesome via CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  />
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- load angular via CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js">
+</script>
+<script src="https://code.angularjs.org/1.5.8/angular-route.min.js">
+</script>
+<script src="https://code.angularjs.org/1.5.8/angular-resource.min.js"></script>
+<script src="app.js">
+</script>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="text-center">
+          Some Most Awesome CHD Links
+        </h1>
+      <h2 class="text-center">
+          &mdash; using Angular &mdash;
+        </h2>
+    </header>
+    <section ng-controller="TabController as tab">
+      <ul class="nav nav-pills">
+        <li ng-class="{ active:tab.isSet(1) }">
+          <a href="" ng-click="tab.setTab(1)">
+                          Tools
+                        </a>
+        </li>
+        <li ng-class="{ active:tab.isSet(2) }">
+          <a href="" ng-click="tab.setTab(2)">
+                          More Tools
+                        </a>
+        </li>
+        <li ng-class="{ active:tab.isSet(3) }">
+          <a href="" ng-click="tab.setTab(3)">
+                          Web Dev
+                        </a>
+        </li>
+        <li ng-class="{ active:tab.isSet(4) }">
+          <a href="" ng-click="tab.setTab(4)">
+                          Learning
+                        </a>
+        </li>
+        <li ng-class="{ active:tab.isSet(5) }">
+          <a href="" ng-click="tab.setTab(5)">
+                          Misc
+                        </a>
+        </li>
+      </ul>
+      <div ng-show="tab.isSet(1)">
+        <li><a href="https://flvsprd.service-now.com">ServiceNow</a></li>
+        <li><a href="https://app.asana.com/0/53573298305166/list">Course Holds</a></li>
+        <li><a href="http://bit.ly/2a8SIc0">VSO Integration List</a></li>
+        <li><a href="https://flvs.visualstudio.com/cs/_git/">Visual Studio (FLVS)</a></li>
+        <li><a href="http://http15.ucompass.com/Development/apps/flvs/view/flashTools/flvs.html">Client 5 Tool</a></li>
+        <li><a href="http://http15.ucompass.com/Development/apps/FLVSMasters/view/flashTools/FLVSMasters.html">Master Manager</a></li>
+        <li><a href="https://outlook.office365.com/owa/?realm=flvs.net&wa=wsignin1.0#path=/mail">Outlook</a></li>
+        <li><a href="https://www.myworkday.com/flvs/d/home.htmld">Workday</a></li>
+        <li><a href="http://www.altadesigns.com/templategen/#/">Template Generator</a></li>
+        <li><a href="http://support.edynamiclearning.com/support/tickets">eDynamics Support</a></li>
+        <li><a href="https://www.flvsconnect.net/">FLVSConnect</a></li>
+        <li><a href="https://stoass.slack.com/messages/general/team/jim/">Slack</a></li>
+        <li><a href="http://stopwatch.online-timers.com/multiple-stopwatches">Stopwatch</a></li>
+        <li><a href="http://text-compare.com/">Text Compare</a></li>
+        <li><a href="tickets.html">Ticket Templates</a></li>
+        <li><a href="https://flvs.my.salesforce.com/a1J/o">SalesForce</a></li>
+      </div>
+      <div ng-show="tab.isSet(2)">
+        <li><a href="http://http15.ucompass.com/Development/commonResources/translation/myCGIGateway.pl?application=flvs&method=managers">Shell Manager</a></li>
+        <li><a href="http://develop.flvs.net/Collaborate/Course/framework/4.0-presentation/module06/lesson01/06_01_01.htm">LO Addresses</a></li>
+		<li><a href="https://sites.google.com/a/fl-vs.org/course-services">CS GSites</a></li>
+        <li><a href="https://app.asana.com/0/53578267690779/list">ASANA</a></li>
+        <li><a href="http://http15.ucompass.com/tools/aligngradebuilder.cgi">GradeBuilder Align Tool</a></li>
+        <li><a href="https://deaconpr01.visualstudio.com">Visual Studio (CHD)</a></li>
+        <li><a href="http://www.calculator.net/time-calculator.html?tcday1=&tchour1=8&tcminute1=50&tcsecond1=&Op=%2B&tcday2=&tchour2=8&tcminute2=30&tcsecond2=&tcday3=&tchour3=&tcminute3=&tcsecond3=&x=38&y=16">Time Calculator</a></li>
+        <li><a href="https://docs.google.com/a/fl-vs.org/spreadsheets/d/1BtyL7XsYovk7y9QAHUzLSJU6ENXn0QJ40GCywRkerIc/edit#gid=0">Time Tracker</a></li>
+        <li><a href="https://coffitivity.com/">Coffitivity</a></li>
+        <li><a href="http://www.rainymood.com/">Rainy Mood</a></li>
+        <li><a href="https://docs.google.com/a/fl-vs.org/document/d/1RNPMk6p6FhfB_KttQOEgxyxLlTBMN1yMmwb-iaZDYwk/edit">Resolutions</a></li>
+        <li><a href="https://flvs1.sharepoint.com/teams/EPMO/EPMO/_layouts/15/start.aspx#/Shared%20Documents/Forms/AllItems.aspx">EPMO Docs</a></li>
+      </div>
+      <div ng-show="tab.isSet(3)">
+        <h1>{{ name }}</h1>
+
+        <li><a href="http://htmlarrows.com/">HTML5 Symbols</a></li>
+        <li><a href="https://flvs1.sharepoint.com/teams/curriculum/cs/_layouts/15/WopiFrame.aspx?sourcedoc={F374ED85-56C9-453C-BECF-57AEBD3CE5C7}&file=IDS%20New%20Employee%20Orientation-%20HOME.docx&action=default&DefaultItemOpen=1">IDS New Employee Orientation</a></li>
+        <li><a href="https://shiftedit.net">ShiftEdit</a></li>
+        <li><a href="http://tools.oratory.com/altcodes.html">Alt Characters Codes</a></li>
+        <li><a href="http://www.periodni.com/mathematical_and_chemical_equations_on_web.html">MATHEMATICAL AND CHEMICAL EQUATIONS WITH CSS</a></li>
+        <li><a href="http://develop.flvs.net/Collaborate/Course/framework/4.0-beta/index.htm">WebDev Cheatsheet v4.0 BETA</a></li>
+        <li><a href="http://develop.flvs.net/Collaborate/Course/framework/4.0-presentation/index.htm">WebDev Cheatsheet v4.0</a></li>
+		<li><a href="http://develop.flvs.net/Collaborate/Course/framework/3.5/cheatsheet/index.htm">WebDev Cheatsheet v3.5</a></li>
+        <li><a href="http://develop.flvs.net/Collaborate/Course/_template/v3.0/cheatsheet/">WebDev Cheatsheet v3.0</a></li>
+        <li><a href="http://develop.flvs.net/Collaborate/Course/_template/v2.0/cheatsheet/">WebDev Cheatsheet v2.0</a></li>
+		<li><a href="http://develop.flvs.net/collaborate/develop/angular/index.htm">WebDev AngularJS Assets Page</a></li>
+        <li><a href="https://my.floridavirtualschool.net/Departments/CurriculumServices/CD/DesignTeam/pages/Web%20Development.aspx">Design Team Home</a></li>
+        <li><a href="http://hslpicker.com/#0f0">HSL Color Picker</a></li>
+        <li><a href="http://quirktools.com/screenfly/">Responsive Design Tester</a></li>
+        <li><a href="http://builtwith.com/">Built with ...</a></li>
+        <li><a href="http://netrenderer.com/">IE Compatability Checker</a></li>
+        <li><a href="http://detechter.com/free-htmlcssjavascript-cheat-sheets-for-web-designers/">Cheat Sheets</a></li>
+      </div>
+      <div ng-show="tab.isSet(4)">
+        <li><a href="http://blog.froont.com/positioning-in-web-design/?utm_content=bufferc872f&utm_medium=social&utm_source=plus.google.com&utm_campaign=buffer">CSS Positioning Explained</a></li>
+        <li><a href="http://www.microsoftvirtualacademy.com/">Microsoft Virtual Academy</a></li>
+        <li><a href="http://www.palermo4.com/post/HTML5-Apps-70-480.aspx">Michael Palermo Blog</a></li>
+        <li><a href="http://eloquentjavascript.net/index.html">Eloquent JavaScript</a></li>
+        <li><a href="https://www.udemy.com/home/my-courses/">Udemy</a></li>
+      </div>
+      <div ng-show="tab.isSet(5)">
+        <li><a href="http://weather.cod.edu/satrad/nexrad/index.php?type=MLB-N0Q-0-6">Radar</a></li>
+        <li><a href="http://weather.weatherbug.com/alerts/spark/?center=28.6110483,-81.6448975,9">Lightning</a></li>
+        <li><a href="http://weather.weatherbug.com/forecasts/now/casselberry-fl-32707">WeatherBug</a></li>
+        <li><a href="https://weatherspark.com/forecasts/noaa/USA/32707/FL/Casselberry">WeatherSpark</a></li>
+        <li><a href="http://zoomradar.com/">ZoomRadar</a></li>
+        <li><a href="http://www.wunderground.com/wundermap/?lat=28.66264725&lon=-81.31276703&zoom=8&pin=Casselberry%2c%20FL&rad=1&wxsn=0&svr=0&cams=0&sat=0&riv=0&mm=0&hur=0">WunderMap</a></li>
+        <li><a href="http://spaghettimodels.com/">Hurricanes</a></li>
+        <h3>News</h3>
+        <li><a href="http://feedly.com/i/my">Feedly</a></li>
+        <li><a href="https://getpocket.com/a/queue/">Pocket</a></li>
+        <li><a href="http://mynews13.com/content/news/cfnews13/news/local-headlines.html">Orlando News</a></li>
+        <h3>Entertainment</h3>
+        <li><a href="http://www.iheart.com/my/stations/">iHeartRADIO</a></li>
+      </div>
+    </section>
+    </di>
+</body>
+
+</html>
