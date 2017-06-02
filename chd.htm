@@ -6,8 +6,7 @@
   <!-- To ensure proper rendering and touch zooming -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- load bootstrap and fontawesome via CDN -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-  />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -19,8 +18,9 @@
 <script src="https://code.angularjs.org/1.5.8/angular-resource.min.js"></script>
 <script src="app.js">
 </script>
+
 <body>
-  <div class="container">
+  <div class="container-fluid">
     <header>
       <h1 class="text-center">
           Some Most Awesome CHD Links
@@ -43,16 +43,21 @@
         </li>
         <li ng-class="{ active:tab.isSet(3) }">
           <a href="" ng-click="tab.setTab(3)">
-                          Web Dev
+                          Workflow
                         </a>
         </li>
         <li ng-class="{ active:tab.isSet(4) }">
           <a href="" ng-click="tab.setTab(4)">
-                          Learning
+                          Web Dev
                         </a>
         </li>
         <li ng-class="{ active:tab.isSet(5) }">
           <a href="" ng-click="tab.setTab(5)">
+                          Learning
+                        </a>
+        </li>
+        <li ng-class="{ active:tab.isSet(6) }">
+          <a href="" ng-click="tab.setTab(6)">
                           Misc
                         </a>
         </li>
@@ -78,7 +83,7 @@
       <div ng-show="tab.isSet(2)">
         <li><a href="http://http15.ucompass.com/Development/commonResources/translation/myCGIGateway.pl?application=flvs&method=managers">Shell Manager</a></li>
         <li><a href="http://develop.flvs.net/Collaborate/Course/framework/4.0-presentation/module06/lesson01/06_01_01.htm">LO Addresses</a></li>
-		<li><a href="https://sites.google.com/a/fl-vs.org/course-services">CS GSites</a></li>
+        <li><a href="https://sites.google.com/a/fl-vs.org/course-services">CS GSites</a></li>
         <li><a href="https://app.asana.com/0/53578267690779/list">ASANA</a></li>
         <li><a href="http://http15.ucompass.com/tools/aligngradebuilder.cgi">GradeBuilder Align Tool</a></li>
         <li><a href="https://deaconpr01.visualstudio.com">Visual Studio (CHD)</a></li>
@@ -90,6 +95,364 @@
         <li><a href="https://flvs1.sharepoint.com/teams/EPMO/EPMO/_layouts/15/start.aspx#/Shared%20Documents/Forms/AllItems.aspx">EPMO Docs</a></li>
       </div>
       <div ng-show="tab.isSet(3)">
+        <h3>Format ticket</h3>
+        <ul>
+          <li>Make sure category and top information is correct.</li>
+          <li>Format Short Description…short description should be in format of&hellip;
+            <br />3209 v14 - Exam: 4.02/q12 - Answer choice incorrect</li>
+        </ul>
+        <h3>Is this a Course Services Issue?</h3>
+        <button data-toggle="collapse" data-target="#issueYes">Yes</button>
+
+        <div id="issueYes" class="collapse">
+          <ul>
+            <li>Continue, below</li>
+          </ul>
+        </div>
+        <button data-toggle="collapse" data-target="#issueNo">No</button>
+
+        <div id="issueNo" class="collapse">
+          <ul>
+            <li>Assign ticket to Application Services</li>
+            <li>You are done</li>
+          </ul>
+        </div>
+
+
+        <h3>Verify that the issue actually exists</h3>
+        <h3>Is this ticket on hold?</h3>
+        <button data-toggle="collapse" data-target="#holdYes">Yes</button>
+
+        <div id="holdYes" class="collapse">
+          <ul>
+            <li>Is this an FLVS Course?
+              <br />
+              <button data-toggle="collapse" data-target="#flvsHoldYes">Yes</button>
+
+              <div id="flvsHoldYes" class="collapse">
+                <ul>
+                  <li>In 'Additional Comments' inform the customer that the course is on hold</li>
+                  <li>Enter Time</li>
+                  <li>Save ticket</li>
+                  <li>You are done until the course hold is removed</li>
+                </ul>
+              </div>
+              <button data-toggle="collapse" data-target="#flvsHoldNo">No</button>
+
+              <div id="flvsHoldNo" class="collapse">
+                <ul>
+                  <li>In 'Work Notes' inform GS that the course is on hold</li>
+                  <li>Enter Time</li>
+                  <li>Save ticket</li>
+                  <li>You are done until the course hold is removed</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <button data-toggle="collapse" data-target="#holdNo">No</button>
+
+        <div id="holdNo" class="collapse">
+          <ul>
+            <li>Continue, below.</li>
+          </ul>
+        </div>
+
+        <h3>Is it an enhancement?</h3>
+        <button data-toggle="collapse" data-target="#enhanceYes">Yes</button>
+
+        <div id="enhanceYes" class="collapse">
+          <ul>
+            <li>Is this an FLVS Course?
+              <br />
+              <button data-toggle="collapse" data-target="#flvsEnhanceYes">Yes</button>
+
+              <div id="flvsEnhanceYes" class="collapse">
+                <ul>
+                  <li>Change state to Resolved</li>
+                  <li>Close code to 'CHD - pending enhancements'</li>
+                  <li>Close note will be canned 'enhancement' comment.</li>
+                </ul>
+              </div>
+              <button data-toggle="collapse" data-target="#flvsEnhanceNo">No</button>
+
+              <div id="flvsEnhanceNo" class="collapse">
+                <ul>
+                  <li>In Work Notes add canned 'enhancement' comment.</li>
+                  <li>Assign to queue 'GS - Global Technical Client Support (Level 1)'</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <button data-toggle="collapse" data-target="#enhanceNo">No</button>
+
+        <div id="enhanceNo" class="collapse">
+          <ul>
+            <li>Continue, below.</li>
+          </ul>
+        </div>
+        <h3>More information needed from the customer?</h3>
+        <button data-toggle="collapse" data-target="#infoYes">Yes</button>
+
+        <div id="infoYes" class="collapse">
+          <ul>
+            <li>Is this an FLVS ticket?
+              <br />
+              <button data-toggle="collapse" data-target="#infoFlvsYes">Yes</button>
+
+              <div id="infoFlvsYes" class="collapse">
+                <ul>
+                  <li>Change state to “Awaiting User Info” </li>
+                  <li>Send canned comment to customer via the "Additional Comments" box
+                    <ul>
+                      <li>Wait for customer to respond</li>
+                      <li>Keep trying for 3 days (resend the message each time). <em>If this is a student ticket, make sure you try a phone call at least once</em></li>
+                      <li>Does the customer finally respond?
+                    </ul>
+                    </li>
+                    <br />
+                    <button data-toggle="collapse" data-target="#infoFlvsRespondYes">Yes</button>
+
+                    <div id="infoFlvsRespondYes" class="collapse">
+                      <ul>
+                        <li>make state 'active', then continue to next section</li>
+                      </ul>
+                    </div>
+                    <button data-toggle="collapse" data-target="#infoFlvsRespondNo">No</button>
+
+                    <div id="infoFlvsRespondNo" class="collapse">
+                      <ul>
+                        <li>Change ticket state to 'resolved'</li>
+                        <li>Change close notes to 'CHD - Working As Designed'</li>
+                        <li>In 'Close Notes' enter message to student about why you are closing the ticket</li>
+                        <li>Enter time worked</li>
+                        <li>Click 'Save'</li>
+                        <li>You are done with this ticket</li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <button data-toggle="collapse" data-target="#infoFlvsNo">No</button>
+
+              <div id="infoFlvsNo" class="collapse">
+                <ul>
+                  <li>Assign ticket to the 'GS - Global Technical Client Support (Level 1)' queue</li>
+                  <li>In 'work notes' send canned comment</li>
+                  <li>Enter time worked</li>
+                  <li>Click save</li>
+                  <li>You are done with this ticket until it comes back to you.</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <button data-toggle="collapse" data-target="#infoNo">No</button>
+
+        <div id="infoNo" class="collapse">
+          <ul>
+            <li>Continue, below.</li>
+          </ul>
+        </div>
+        <h3>CS/SME approval needed before editing?</h3>
+        <button data-toggle="collapse" data-target="#approvalYes">Yes</button>
+
+        <div id="approvalYes" class="collapse">
+          <ul>
+            <li>in work notes, add 'request approval' template</li>
+            <li>Insert time worked</li>
+            <li>Click 'save and assign to CS'</li>
+            <li>You are done until the ticket comes back to you from the CS</li>
+          </ul>
+        </div>
+        <button data-toggle="collapse" data-target="#approvalNo">No</button>
+
+        <div id="approvalNo" class="collapse">
+          <ul>
+            <li>Continue, below.</li>
+          </ul>
+        </div>
+        <br />
+        <hr width="95%" />
+        Is this and <button data-toggle="collapse" data-target="#examEdits">Exam Edit</button>
+
+        <div id="examEdits" class="collapse">
+          <ul>
+            <li>Open the exam in Master Manager</li>
+            <li>Create a new 'resolution' template for this ticket</li>
+            <li>In your 'Resolution' template, enter the course name and exam name
+              <br />Example:
+              <br /><strong>RESOLUTION:</strong>
+              <br />Intensive Reading ( master4688 ) - Exam: 01.00 Module One Pretest</li>
+            <li>In your 'Resolution' template, enter your 'action'
+              <br />Example:
+              <br /><strong>ACTION:</strong> Q23 - Replace word in answer choice 2</li>
+            <li>In Master manager click the 'modify' button on the exam question</li>
+            <li>For your 'Resolution' template, copy the exact question stem and answer choices from MM into the 'old' and 'new' sections (don't forget to indication the correct answer in <strong>bold</strong>)</li>
+            <li>On your 'Resolution' template, edit the 'new'. Make sure you mark the changes from the 'old' and 'new' in red.</li>
+            <li>Copy your 'new' changes into the exam in Master Manager.</li>
+            <li>Click 'Submit' in Master Manager to save the edit</li>
+            <li>Wait for the page to refresh, review to make sure the edit looks correct.</li>
+            <li>Close the exam page.</li>
+            <li>In the main MM window, sync development to production.</li>
+          </ul>
+        </div>
+        or
+        <button data-toggle="collapse" data-target="#contentEdits">Content Edit</button>
+
+        <div id="contentEdits" class="collapse">
+          <ul>
+            <li><em>We will cover content edits in the future.</em></li>
+          </ul>
+        </div>
+        <br />
+        <hr width="95%" />
+        <h3>Does the CS need to verify the edit you just made?</h3>
+        <button data-toggle="collapse" data-target="#verifyYes">Yes</button>
+
+        <div id="verifyYes" class="collapse">
+          <ul>
+            <li>Add 'scheduled' template message to work notes</li>
+            <li>Add CS name to the work notes recipients</li>
+            <li>Changes ticket state to 'scheduled'</li>
+            <li>Enter time and save.</li>
+            <li>Wait for CS to verify the edit is correct and to their specifications (24 hours)- start here 24/schd.</li>
+            <li>Did CS post comment for a further change?
+              <br /><button data-toggle="collapse" data-target="#verifyCommentsYes">Yes</button>
+
+              <div id="verifyCommentsYes" class="collapse">
+                <ul>
+                  <li>Go back to editing, above</li>
+                </ul>
+              </div>
+              <button data-toggle="collapse" data-target="#verifyCommentsNo">No</button>
+
+              <div id="verifyCommentsNo" class="collapse">
+                <ul>
+                  <li>Remove CS name from work notes recipients</li>
+                  <li>Continue, below.</li>
+                </ul>
+              </div>
+
+            </li>
+          </ul>
+        </div>
+        <button data-toggle="collapse" data-target="#verifyNo">No (if this is one of your child tickets)</button>
+
+        <div id="verifyNo" class="collapse">
+          <ul>
+            <li>Continue, below.</li>
+          </ul>
+        </div>
+        <h3>Is this a Client 5 course?</h3>
+        <button data-toggle="collapse" data-target="#client5Yes">Yes</button>
+
+        <div id="client5Yes" class="collapse">
+          <ul>
+            <li>Fill out Client 5 form and copy 'result' message</li>
+            <li>Insert note into work notes stating that Client 5 notification sent (and paste 'result' message)</li>
+          </ul>
+        </div>
+        <button data-toggle="collapse" data-target="#client5No">No</button>
+
+        <div id="client5No" class="collapse">
+          <ul>
+            <li>Continue, below.</li>
+          </ul>
+        </div>
+        <h3>Is this an FLVS course?</h3>
+        <button data-toggle="collapse" data-target="#isFlvsYes">Yes</button>
+
+        <div id="isFlvsYes" class="collapse">
+          <ul>
+            <li>Is this a ticket created by you?
+              <br /><button data-toggle="collapse" data-target="#ticketByUYes">Yes</button>
+
+              <div id="ticketByUYes" class="collapse">
+                <ul>
+                  <li>Designate close code</li>
+                  <li>Paste resolution into close notes</li>
+                  <li>Put time in ticket</li>
+                  <li>Change state to resolved and 'save' ticket</li>
+                </ul>
+              </div>
+              <button data-toggle="collapse" data-target="#ticketByUNo">No</button>
+
+              <div id="ticketByUNo" class="collapse">
+                <ul>
+                  <li>Paste resolution into work notes</li>
+                  <li>Extract CS name</li>
+                  <li>Designate close code</li>
+                  <li>Insert 'Solved' template message into close notes</li>
+                  <li>Insert time worked</li>
+                  <li>Change ticket state to 'Resolved' and <strong>save</strong> ticket</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <button data-toggle="collapse" data-target="#isFlvsNo">No</button>
+
+        <div id="isFlvsNo" class="collapse">
+          <ul>
+            <li>Change ticket state to 'Active'</li>
+            <li>Paste resolution into work notes</li>
+            <li>Remove your name from 'Assigned to'</li>
+            <li>Change 'Assignment group' to appropriate GS group (usually GS Global Client Notification)</li>
+            <li>Enter time and 'save' ticket</li>
+          </ul>
+        </div>
+        <h3>Is this a child ticket</h3>
+        <button data-toggle="collapse" data-target="#childYes">Yes</button>
+
+        <div id="childYes" class="collapse">
+          <ul>
+            <li>Are there any other child tickets that you need to finish editing?
+              <br /><button data-toggle="collapse" data-target="#otherChildYes">Yes</button>
+
+              <div id="otherChildYes" class="collapse">
+                <ul>
+                  <li>edit them (go back to the top of the edit checklist)</li>
+                </ul>
+              </div>
+              <button data-toggle="collapse" data-target="#otherChildNo">No</button>
+
+              <div id="otherChildNo" class="collapse">
+                <ul>
+                  <li>You are done</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <button data-toggle="collapse" data-target="#childNo">No</button>
+
+        <div id="childNo" class="collapse">
+          <ul>
+            <li>From the parent ticket go to the 'related courses' section</li>
+            <li>Verify which courses truly need the edit (you'll have to go into each course and check)</li>
+            <li>'Check mark' any related courses that need the edit.</li>
+            <li>Go to the top of the page and copy the main ticket number</li>
+            <li>Go back to the bottom of the 'related courses' section.</li>
+            <li>In the 'actions on selected rows' dropdown, choose 'create incidents'</li>
+            <li>Paste in the ticket number and wait for about 3 seconds and click 'update' button</li>
+            <li>After the page updates, go to the 'child incidents' sections of the ticket</li>
+            <li><strong>For each</strong> of the child tickets that you have created, you need to change each of their 'short descriptions' to match the actual course of the ticket (the 'short description' is copied from the parent ticket, so it will originally
+              have the wrong course number and version number---you need to change this in each of the child tickets you created)</li>
+            <li>Edit each child ticket</li>
+          </ul>
+        </div>
+<br />
+<br />
+
+
+
+
+
+
+      </div>
+      <div ng-show="tab.isSet(4)">
         <h1>{{ name }}</h1>
 
         <li><a href="http://htmlarrows.com/">HTML5 Symbols</a></li>
@@ -99,10 +462,10 @@
         <li><a href="http://www.periodni.com/mathematical_and_chemical_equations_on_web.html">MATHEMATICAL AND CHEMICAL EQUATIONS WITH CSS</a></li>
         <li><a href="http://develop.flvs.net/Collaborate/Course/framework/4.0-beta/index.htm">WebDev Cheatsheet v4.0 BETA</a></li>
         <li><a href="http://develop.flvs.net/Collaborate/Course/framework/4.0-presentation/index.htm">WebDev Cheatsheet v4.0</a></li>
-		<li><a href="http://develop.flvs.net/Collaborate/Course/framework/3.5/cheatsheet/index.htm">WebDev Cheatsheet v3.5</a></li>
+        <li><a href="http://develop.flvs.net/Collaborate/Course/framework/3.5/cheatsheet/index.htm">WebDev Cheatsheet v3.5</a></li>
         <li><a href="http://develop.flvs.net/Collaborate/Course/_template/v3.0/cheatsheet/">WebDev Cheatsheet v3.0</a></li>
         <li><a href="http://develop.flvs.net/Collaborate/Course/_template/v2.0/cheatsheet/">WebDev Cheatsheet v2.0</a></li>
-		<li><a href="http://develop.flvs.net/collaborate/develop/angular/index.htm">WebDev AngularJS Assets Page</a></li>
+        <li><a href="http://develop.flvs.net/collaborate/develop/angular/index.htm">WebDev AngularJS Assets Page</a></li>
         <li><a href="https://my.floridavirtualschool.net/Departments/CurriculumServices/CD/DesignTeam/pages/Web%20Development.aspx">Design Team Home</a></li>
         <li><a href="http://hslpicker.com/#0f0">HSL Color Picker</a></li>
         <li><a href="http://quirktools.com/screenfly/">Responsive Design Tester</a></li>
@@ -110,14 +473,14 @@
         <li><a href="http://netrenderer.com/">IE Compatability Checker</a></li>
         <li><a href="http://detechter.com/free-htmlcssjavascript-cheat-sheets-for-web-designers/">Cheat Sheets</a></li>
       </div>
-      <div ng-show="tab.isSet(4)">
+      <div ng-show="tab.isSet(5)">
         <li><a href="http://blog.froont.com/positioning-in-web-design/?utm_content=bufferc872f&utm_medium=social&utm_source=plus.google.com&utm_campaign=buffer">CSS Positioning Explained</a></li>
         <li><a href="http://www.microsoftvirtualacademy.com/">Microsoft Virtual Academy</a></li>
         <li><a href="http://www.palermo4.com/post/HTML5-Apps-70-480.aspx">Michael Palermo Blog</a></li>
         <li><a href="http://eloquentjavascript.net/index.html">Eloquent JavaScript</a></li>
         <li><a href="https://www.udemy.com/home/my-courses/">Udemy</a></li>
       </div>
-      <div ng-show="tab.isSet(5)">
+      <div ng-show="tab.isSet(6)">
         <li><a href="http://weather.cod.edu/satrad/nexrad/index.php?type=MLB-N0Q-0-6">Radar</a></li>
         <li><a href="http://weather.weatherbug.com/alerts/spark/?center=28.6110483,-81.6448975,9">Lightning</a></li>
         <li><a href="http://weather.weatherbug.com/forecasts/now/casselberry-fl-32707">WeatherBug</a></li>
@@ -133,7 +496,7 @@
         <li><a href="http://www.iheart.com/my/stations/">iHeartRADIO</a></li>
       </div>
     </section>
-    </di>
+  </div>
 </body>
 
 </html>
