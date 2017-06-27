@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="gemStore">
+<html ng-app="myApp">
 
 <head>
   <meta charset="utf-8">
@@ -8,6 +8,13 @@
   <!-- load bootstrap and fontawesome via CDN -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
+<style>
+  .vis {
+
+    height: 100px;
+    display: none;
+  }
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- load angular via CDN -->
@@ -23,11 +30,11 @@
   <div class="container">
     <header>
       <h1 class="text-center">
-          Some Most Awesome CHD Links
-        </h1>
+        Some Most Awesome CHD Links
+      </h1>
       <h2 class="text-center">
-          &mdash; using Angular &mdash;
-        </h2>
+        &mdash; using Angular &mdash;
+      </h2>
     </header>
     <section ng-controller="TabController as tab">
       <ul class="nav nav-pills">
@@ -95,365 +102,309 @@
         <li><a href="https://flvs1.sharepoint.com/teams/EPMO/EPMO/_layouts/15/start.aspx#/Shared%20Documents/Forms/AllItems.aspx">EPMO Docs</a></li>
       </div>
       <div ng-show="tab.isSet(3)">
-        <h3>Format ticket</h3>
-        <ul>
-          <li>Make sure category and top information is correct.</li>
-          <li>Format Short Description…short description should be in format of&hellip;
-            <br />3209 v14 - Exam: 4.02/q12 - Answer choice incorrect
-            <br />3209 v14 - Lesson: 4.02/p4 - Spelling error</li>
-        </ul>
-        <h3>Is this a Course Services Issue?</h3>
-        <button data-toggle="collapse" data-target="#issueYes">Yes</button>
+        <div ng-controller="WorkFlow">
+          <div>
+            <legend>Format ticket</legend>
+            <input type="checkbox" />Make sure category and top information is correct.<br />
+            <input type="checkbox" ng-click="showFormIssue = !showFormIssue" />Format Short Description…short description
+            should be in format of&hellip;
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3209 v14 - Exam: 4.02/q12 - Answer choice incorrect
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3209 v14 - Lesson: 4.02/p4 - Spelling error<br /><br />
+          </div>
 
-        <div id="issueYes" class="collapse">
-          <ul>
-            <li>Continue, below</li>
-          </ul>
+          <div ng-show="showFormIssue">
+            <legend>Is this a Course Services Issue?</legend>
+            <input type="checkbox" ng-click="showFormVerify = !showFormVerify" />yes<br />
+            <input type="checkbox" ng-click="showFormIssueNo = !showFormIssueNo" />no<br />
+          </div>
+          <br />
+          <div ng-show="showFormIssueNo">
+            <input type="checkbox" />Assign ticket to Application Services<br />
+            <input type="checkbox" />You are done<br />
+          </div>
+          <br />
+
+          <form ng-show="showFormVerify">
+            <legend><input type="checkbox" ng-click="showFormHold = !showFormHold" />Verify that the issue actually exists</legend>
+          </form>
+
+
+
+          <form ng-show="showFormHold">
+            <legend>Is this ticket on hold?</legend>
+            <input type="checkbox" ng-click="showFormHoldYes = !showFormHoldYes" />yes<br />
+            <input type="checkbox" ng-click="showFormEnhancement = !showFormEnhancement" />no<br />
+          </form>
+          <br />
+          <form ng-show="showFormHoldYes">
+            Is this an FLVS Course?<br />
+            <input type="checkbox" ng-click="showFormHoldYesFLVSYes = !showFormHoldYesFLVSYes" />yes<br />
+            <input type="checkbox" ng-click="showFormHoldYesFLVSNo = !showFormHoldYesFLVSNo" />no<br />
+          </form>
+          <br />
+          <form ng-show="showFormHoldYesFLVSYes">
+            <input type="checkbox" />In 'Additional Comments' inform the customer that the course is on hold<br />
+            <input type="checkbox" />Enter Time<br />
+            <input type="checkbox" />Save ticket<br />
+            <input type="checkbox" />You are done until the course hold is removed<br />
+          </form>
+          <br />
+          <form ng-show="showFormHoldYesFLVSNo">
+            <input type="checkbox" />In 'Work Notes' inform GS that the course is on hold<br />
+            <input type="checkbox" />Enter Time<br />
+            <input type="checkbox" />Save ticket<br />
+            <input type="checkbox" />You are done until the course hold is removed<br />
+          </form>
+          <br />
+          <form ng-show="showFormEnhancement">
+            <legend>Is it an enhancement?</legend>
+            <input type="checkbox" ng-click="showFormEnhancementYes = !showFormEnhancementYes" />yes<br />
+            <input type="checkbox" ng-click="showFormMoreinfo = !showFormMoreinfo" />no<br />
+          </form>
+          <br />
+          <form ng-show="showFormEnhancementYes">
+            <legend>Is this an FLVS Course?</legend>
+            <input type="checkbox" ng-click="showFormEnhancementYesFLVSYes = !showFormEnhancementYesFLVSYes" />yes<br />
+            <input type="checkbox" ng-click="showFormEnhancementYesFLVSNo = !showFormEnhancementYesFLVSNo" />no<br />
+          </form>
+          <br />
+          <form ng-show="showFormEnhancementYesFLVSYes">
+            <input type="checkbox" />Change state to Resolved<br />
+            <input type="checkbox" />Close code to 'CHD - pending enhancements'<br />
+            <input type="checkbox" />Close note will be canned 'enhancement' comment.<br />
+          </form>
+          <br />
+          <form ng-show="showFormEnhancementYesFLVSNo">
+            <input type="checkbox" />In Work Notes add canned 'enhancement' comment.<br />
+            <input type="checkbox" />Assign to queue 'GS - Global Technical Client Support (Level 1)'<br />
+          </form>
+          <br />
+          <form ng-show="showFormMoreinfo">
+            <legend>More information needed from the customer?</legend>
+            <input type="checkbox" ng-click="showFormMoreinfoYes = !showFormMoreinfoYes" />Yes<br />
+            <input type="checkbox" ng-click="showFormCsapprove = !showFormCsapprove" />No<br />
+          </form>
+          <br />
+          <form ng-show="showFormMoreinfoYes">
+            <legend>Is this an FLVS ticket?</legend>
+            <input type="checkbox" ng-click="showFormMoreinfoYesFlvsyes = !showFormMoreinfoYesFlvsyes" />Yes<br />
+            <input type="checkbox" ng-click="showFormMoreinfoYesFlvsno = !showFormMoreinfoYesFlvsno" />No<br />
+          </form>
+          <br />
+          <form ng-show="showFormMoreinfoYesFlvsyes">
+            <input type="checkbox" />Change state to “Awaiting User Info”<br />
+            <input type="checkbox" />Send canned comment to customer via the "Additional Comments" box<br />
+            <input type="checkbox" />Wait for customer to respond<br />
+            <input type="checkbox" />Keep trying for 3 days (resend the message each time). If this is a student ticket,
+            make sure you try a phone call at least once<br />
+            <br /> Does the customer finally respond?<br />
+            <input type="checkbox" ng-click="showFormMoreinfoYesFlvsyesRespondsyes = !showFormMoreinfoYesFlvsyesRespondsyes" />Yes<br
+            />
+            <input type="checkbox" ng-click="showFormMoreinfoYesFlvsyesRespondsno = !showFormMoreinfoYesFlvsyesRespondsno" />No<br
+            />
+          </form>
+          <br />
+
+          <form ng-show="showFormMoreinfoYesFlvsyesRespondsyes">
+            <input type="checkbox" ng-click="showFormCsapprove = !showFormCsapprove" />make state 'active'<br />
+          </form>
+          <br />
+          <form ng-show="showFormMoreinfoYesFlvsyesRespondsno">
+            <input type="checkbox" />Change ticket state to 'resolved'<br />
+            <input type="checkbox" />Change close notes to 'CHD - Working As Designed'<br />
+            <input type="checkbox" />In 'Close Notes' enter message to student about why you are closing the ticket<br />
+            <input type="checkbox" />Enter time worked<br />
+            <input type="checkbox" />Click 'Save'<br />
+            <input type="checkbox" />You are done with this ticket<br />
+          </form>
+
+          <br />
+          <form ng-show="showFormMoreinfoYesFlvsno">
+            <input type="checkbox">Assign ticket to the 'GS - Global Technical Client Support (Level 1)' queue<br />
+            <input type="checkbox">In 'work notes' send canned comment<br />
+            <input type="checkbox">Enter time worked<br />
+            <input type="checkbox">Click save<br />
+            <input type="checkbox">You are done with this ticket until it comes back to you.<br />
+          </form>
+          <br />
+          <form ng-show="showFormCsapprove">
+            <legend>CS/SME approval needed before editing?</legend>
+            <input type="checkbox" ng-click="showFormCsapproveYes = !showFormCsapproveYes" />Yes<br />
+            <input type="checkbox" ng-click="showFormEdit = !showFormEdit" />No<br />
+          </form>
+          <br />
+          <form ng-show="showFormCsapproveYes">
+            <input type="checkbox" />in work notes, add 'request approval' template<br />
+            <input type="checkbox" />Insert time worked<br />
+            <input type="checkbox" />Click 'save and assign to CS'<br />
+            <input type="checkbox" />You are done until the ticket comes back to you from the CS<br />
+          </form>
+          <br />
+          <form ng-show="showFormEdit">
+            <legend>Assessment or Content Edit?</legend>
+            <input type="checkbox" ng-click="showFormEditExam = !showFormEditExam" />Assessment Edit<br />
+            <input type="checkbox" ng-click="showFormEditcontent = !showFormEditcontent" />Content Edit<br />
+          </form>
+          <br />
+          <form ng-show="showFormEditExam">
+            <input type="checkbox" />Open the exam in Master Manager<br />
+            <input type="checkbox" />Create a new 'resolution' template for this ticket<br />
+            <input type="checkbox" />In your 'Resolution' template, enter the course name and exam name
+            <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example:
+            <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <strong>RESOLUTION:</strong>
+            <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Intensive Reading ( master4688 ) - Exam: 01.00 Module One Pretest
+            <br />
+            <input type="checkbox" />In your 'Resolution' template, enter your 'action'
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example:
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>ACTION:</strong> Q23 - Replace word in answer choice 2
+            <br />
+            <input type="checkbox" />In Master manager click the 'modify' button on the exam question<br />
+            <input type="checkbox" />For your 'Resolution' template, copy the exact question stem and answer choices from
+            MM into the 'old' and 'new' sections (don't forget to indication the correct answer in <strong>bold</strong>)<br
+            />
+            <input type="checkbox" />On your 'Resolution' template, edit the 'new'. Make sure you mark the changes from the
+            'old' and 'new' in red.<br />
+            <input type="checkbox" />Copy your 'new' changes into the exam in Master Manager.<br />
+            <input type="checkbox" />Click 'Submit' in Master Manager to save the edit<br />
+            <input type="checkbox" />Wait for the page to refresh, review to make sure the edit looks correct.<br />
+            <input type="checkbox" />Close the exam page.<br />
+            <input type="checkbox" ng-click="showFormCsverify = !showFormCsverify" />In the main MM window, sync development to production.<br />
+          </form>
+          <br />
+          <form ng-show="showFormEditcontent">
+            <input type="checkbox" ng-click "showFormCsverify = !showFormCsverify" />Content Edit steps coming soon (click
+            to continue)<br />
+          </form>
+          <br />
+          <form ng-show="showFormCsverify">
+            <legend>Does the CS need to verify the edit you just made?</legend>
+            <input type="checkbox" ng-click="showFormCsverifyYes = !showFormCsverifyYes" />Yes<br />
+            <input type="checkbox" ng-click="showFormCsverifyNo = !showFormCsverifyNo" />No (if this is one of your child
+            tickets)
+            <br />
+          </form>
+          <br />
+          <form ng-show="showFormCsverifyYes">
+            <input type="checkbox" />Add 'scheduled' template message to work notes<br />
+            <input type="checkbox" />Add CS name to the work notes recipients<br />
+            <input type="checkbox" />Changes ticket state to 'scheduled'<br />
+            <input type="checkbox" />Enter time and save.<br />
+            <input type="checkbox" />Wait for CS to verify the edit is correct and to their specifications (24 hours)- start
+            here 24/schd.<br /><br /> Did CS post comment for a further change?<br />
+            <input type="checkbox" ng-click="showFormCsverifyYesChangeyes = !showFormCsverifyYesChangeyes" />Yes<br />
+            <input type="checkbox" ng-click="showFormCsverifyYesChangeno = !showFormCsverifyYesChangeno" />No<br />
+          </form>
+          <br />
+          <form ng-show="showFormCsverifyYesChangeyes" />
+          <input type="checkbox" />Go back to editing, above<br />
+          </form>
+          <br />
+          <form ng-show="showFormCsverifyYesChangeno" />
+          <input type="checkbox" ng-click="showFormC5 = !showFormC5" />Remove CS name from work notes recipients<br />
+          </form>
+          <br />
+          <form ng-show="showFormCsverifyNo">
+            <input type="checkbox" />Remove CS name from ticket<br />
+            <input type="checkbox" ng-click="showFormC5 = !showFormC5" />'Save' ticket<br />
+          </form>
+          <br />
+          <form ng-show="showFormC5" />
+          <legend>Is this a Client 5 course?</legend>
+          <input type="checkbox" ng-click="showFormC5Yes = !showFormC5Yes" />Yes<br />
+          <input type="checkbox" ng-click="showFormisFLVS = !showFormisFLVS" />No<br />
+          </form>
+          <br />
+          <form ng-show="showFormC5Yes">
+            <input type="checkbox" />Remove CS name from ticket<br />
+            <input type="checkbox" />Fill out Client 5 form and copy 'email address' message<br />
+            <input type="checkbox" />Insert note into work notes stating that Client 5 notification sent (and paste 'email
+            address' message)<br />
+            <input type="checkbox" />Insert time<br />
+            <input type="checkbox" ng-click="showFormisFLVS = !showFormisFLVS" />Click 'save'
+            <br />
+          </form>
+          <br />
+          <form ng-show="showFormisFLVS">
+            <legend>Is this an FLVS course?</legend>
+            <input type="checkbox" ng-click="showFormisFLVSYes = !showFormisFLVSYes" />Yes<br />
+            <input type="checkbox" ng-click="showFormisFLVSNo = !showFormisFLVSNo" />No<br />
+          </form>
+          <br />
+          <form ng-show="showFormisFLVSYes">
+            Is this a ticket created by you?<br />
+            <input type="checkbox" ng-click="showFormisFLVSYesCreated = !showFormisFLVSYesCreated" />Yes<br />
+            <input type="checkbox" ng-click="showFormisFLVSYesCreatedno = !showFormisFLVSYesCreatedno" />No<br />
+          </form>
+          <br />
+          <form ng-show="showFormisFLVSYesCreated">
+            <input type="checkbox" />Designate close code<br />
+            <input type="checkbox" />Paste resolution into close notes<br />
+            <input type="checkbox" />Put time in ticket<br />
+            <input type="checkbox" ng-click="showFormChild =! showFormChild" />Change state to resolved and 'save' ticket<br
+            />
+          </form>
+          <br />
+          <form ng-show="showFormisFLVSYesCreatedno">
+            <input type="checkbox" />Change ticket state to 'Active'<br />
+            <input type="checkbox" />Paste resolution into work notes<br />
+            <input type="checkbox" />Remove your name from 'Assigned to'<br />
+            <input type="checkbox" />Change 'Assignment group' to appropriate GS group (usually GS Global Client Notification)<br
+            />
+            <input type="checkbox" ng-click="showFormChild = !showFormChild" />Enter time and 'save' ticket<br />
+          </form>
+          <br />
+          <form ng-show="showFormisFLVSNo">
+            <input type="checkbox" />Change ticket state to 'Active'<br />
+            <input type="checkbox" />Paste resolution into work notes<br />
+            <input type="checkbox" />Remove your name from 'Assigned to'<br />
+            <input type="checkbox" />Change 'Assignment group' to appropriate GS group (usually GS Global Client Notification)<br
+            />
+            <input type="checkbox" ng-click="showFormChild = !showFormChild" />Enter time and 'save' ticket<br />
+          </form>
+          <br />
+          <form ng-show="showFormChild">
+            <legend>Is this a child ticket</legend>
+            <input type="checkbox" ng-click="showFormChildYes = !showFormChildYes" />Yes<br />
+            <input type="checkbox" ng-click="showFormChildNo = !showFormChildNo" />No<br />
+          </form>
+          <br />
+          <form ng-show="showFormChildYes">
+            Are there any other child tickets that you need to finish editing?<br />
+            <input type="checkbox" ng-click="showFormChildYesOtheryes = !showFormChildYesOtheryes" />Yes<br />
+            <input type="checkbox" ng-click="showFormChildYesOtherno = !showFormChildYesOtherno" />No<br />
+          </form>
+          <br />
+          <form ng-show="showFormChildYesOtheryes" />
+          <input type="checkbox" />edit them (go back to the top of the edit checklist)<br />
+          </form>
+          <br />
+          <form ng-show="showFormChildYesOtherno">
+            <input type="checkbox" />You are done!<br />
+          </form>
+          <br />
+          <form ng-show="showFormChildNo">
+            <input type="checkbox" />From the parent ticket go to the 'related courses' section<br />
+            <input type="checkbox" />Verify which courses truly need the edit (you'll have to go into each course and check)<br
+            />
+            <input type="checkbox" />'Check mark' any related courses that need the edit.<br />
+            <input type="checkbox" />Go to the top of the page and copy the main ticket number<br />
+            <input type="checkbox" />Go back to the bottom of the 'related courses' section.<br />
+            <input type="checkbox" />In the 'actions on selected rows' dropdown, choose 'create incidents'<br />
+            <input type="checkbox" />Paste in the ticket number and wait for about 3 seconds and click 'update' button<br
+            />
+            <input type="checkbox" />After the page updates, go to the 'child incidents' sections of the ticket<br />
+            <input type="checkbox" /><strong>For each</strong> of the child tickets that you have created, you need to change
+            each of their 'short descriptions' to match the actual course of the ticket (the 'short description' is copied
+            from the parent ticket, so it will originally have the wrong course number and version number---you need to change
+            this in each of the child tickets you created)<br />
+            <input type="checkbox" />Edit each child ticket<br />
+          </form>
+
+
+
+
         </div>
-        <button data-toggle="collapse" data-target="#issueNo">No</button>
-
-        <div id="issueNo" class="collapse">
-          <ul>
-            <li>Assign ticket to Application Services</li>
-            <li>You are done</li>
-          </ul>
-        </div>
-
-
-        <h3>Verify that the issue actually exists</h3>
-        <h3>Is this ticket on hold?</h3>
-        <button data-toggle="collapse" data-target="#holdYes">Yes</button>
-
-        <div id="holdYes" class="collapse">
-          <ul>
-            <li>Is this an FLVS Course?
-              <br />
-              <button data-toggle="collapse" data-target="#flvsHoldYes">Yes</button>
-
-              <div id="flvsHoldYes" class="collapse">
-                <ul>
-                  <li>In 'Additional Comments' inform the customer that the course is on hold</li>
-                  <li>Enter Time</li>
-                  <li>Save ticket</li>
-                  <li>You are done until the course hold is removed</li>
-                </ul>
-              </div>
-              <button data-toggle="collapse" data-target="#flvsHoldNo">No</button>
-
-              <div id="flvsHoldNo" class="collapse">
-                <ul>
-                  <li>In 'Work Notes' inform GS that the course is on hold</li>
-                  <li>Enter Time</li>
-                  <li>Save ticket</li>
-                  <li>You are done until the course hold is removed</li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <button data-toggle="collapse" data-target="#holdNo">No</button>
-
-        <div id="holdNo" class="collapse">
-          <ul>
-            <li>Continue, below.</li>
-          </ul>
-        </div>
-
-        <h3>Is it an enhancement?</h3>
-        <button data-toggle="collapse" data-target="#enhanceYes">Yes</button>
-
-        <div id="enhanceYes" class="collapse">
-          <ul>
-            <li>Is this an FLVS Course?
-              <br />
-              <button data-toggle="collapse" data-target="#flvsEnhanceYes">Yes</button>
-
-              <div id="flvsEnhanceYes" class="collapse">
-                <ul>
-                  <li>Change state to Resolved</li>
-                  <li>Close code to 'CHD - pending enhancements'</li>
-                  <li>Close note will be canned 'enhancement' comment.</li>
-                </ul>
-              </div>
-              <button data-toggle="collapse" data-target="#flvsEnhanceNo">No</button>
-
-              <div id="flvsEnhanceNo" class="collapse">
-                <ul>
-                  <li>In Work Notes add canned 'enhancement' comment.</li>
-                  <li>Assign to queue 'GS - Global Technical Client Support (Level 1)'</li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <button data-toggle="collapse" data-target="#enhanceNo">No</button>
-
-        <div id="enhanceNo" class="collapse">
-          <ul>
-            <li>Continue, below.</li>
-          </ul>
-        </div>
-        <h3>More information needed from the customer?</h3>
-        <button data-toggle="collapse" data-target="#infoYes">Yes</button>
-
-        <div id="infoYes" class="collapse">
-          <ul>
-            <li>Is this an FLVS ticket?
-              <br />
-              <button data-toggle="collapse" data-target="#infoFlvsYes">Yes</button>
-
-              <div id="infoFlvsYes" class="collapse">
-                <ul>
-                  <li>Change state to “Awaiting User Info” </li>
-                  <li>Send canned comment to customer via the "Additional Comments" box
-                    <ul>
-                      <li>Wait for customer to respond</li>
-                      <li>Keep trying for 3 days (resend the message each time). <em>If this is a student ticket, make sure you try a phone call at least once</em></li>
-                      <li>Does the customer finally respond?
-                    </ul>
-                    </li>
-                    <br />
-                    <button data-toggle="collapse" data-target="#infoFlvsRespondYes">Yes</button>
-
-                    <div id="infoFlvsRespondYes" class="collapse">
-                      <ul>
-                        <li>make state 'active', then continue to next section</li>
-                      </ul>
-                    </div>
-                    <button data-toggle="collapse" data-target="#infoFlvsRespondNo">No</button>
-
-                    <div id="infoFlvsRespondNo" class="collapse">
-                      <ul>
-                        <li>Change ticket state to 'resolved'</li>
-                        <li>Change close notes to 'CHD - Working As Designed'</li>
-                        <li>In 'Close Notes' enter message to student about why you are closing the ticket</li>
-                        <li>Enter time worked</li>
-                        <li>Click 'Save'</li>
-                        <li>You are done with this ticket</li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <button data-toggle="collapse" data-target="#infoFlvsNo">No</button>
-
-              <div id="infoFlvsNo" class="collapse">
-                <ul>
-                  <li>Assign ticket to the 'GS - Global Technical Client Support (Level 1)' queue</li>
-                  <li>In 'work notes' send canned comment</li>
-                  <li>Enter time worked</li>
-                  <li>Click save</li>
-                  <li>You are done with this ticket until it comes back to you.</li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <button data-toggle="collapse" data-target="#infoNo">No</button>
-
-        <div id="infoNo" class="collapse">
-          <ul>
-            <li>Continue, below.</li>
-          </ul>
-        </div>
-        <h3>CS/SME approval needed before editing?</h3>
-        <button data-toggle="collapse" data-target="#approvalYes">Yes</button>
-
-        <div id="approvalYes" class="collapse">
-          <ul>
-            <li>in work notes, add 'request approval' template</li>
-            <li>Insert time worked</li>
-            <li>Click 'save and assign to CS'</li>
-            <li>You are done until the ticket comes back to you from the CS</li>
-          </ul>
-        </div>
-        <button data-toggle="collapse" data-target="#approvalNo">No</button>
-
-        <div id="approvalNo" class="collapse">
-          <ul>
-            <li>Continue, below.</li>
-          </ul>
-        </div>
-        <br />
-        <hr width="95%" /> Is this and <button data-toggle="collapse" data-target="#examEdits">Exam Edit</button>
-
-        <div id="examEdits" class="collapse">
-          <ul>
-            <li>Open the exam in Master Manager</li>
-            <li>Create a new 'resolution' template for this ticket</li>
-            <li>In your 'Resolution' template, enter the course name and exam name
-              <br />Example:
-              <br /><strong>RESOLUTION:</strong>
-              <br />Intensive Reading ( master4688 ) - Exam: 01.00 Module One Pretest</li>
-            <li>In your 'Resolution' template, enter your 'action'
-              <br />Example:
-              <br /><strong>ACTION:</strong> Q23 - Replace word in answer choice 2</li>
-            <li>In Master manager click the 'modify' button on the exam question</li>
-            <li>For your 'Resolution' template, copy the exact question stem and answer choices from MM into the 'old' and 'new' sections (don't forget to indication the correct answer in <strong>bold</strong>)</li>
-            <li>On your 'Resolution' template, edit the 'new'. Make sure you mark the changes from the 'old' and 'new' in red.</li>
-            <li>Copy your 'new' changes into the exam in Master Manager.</li>
-            <li>Click 'Submit' in Master Manager to save the edit</li>
-            <li>Wait for the page to refresh, review to make sure the edit looks correct.</li>
-            <li>Close the exam page.</li>
-            <li>In the main MM window, sync development to production.</li>
-          </ul>
-        </div>
-        or
-        <button data-toggle="collapse" data-target="#contentEdits">Content Edit</button>
-
-        <div id="contentEdits" class="collapse">
-          <ul>
-            <li><em>We will cover content edits in the future.</em></li>
-          </ul>
-        </div>
-        <br />
-        <hr width="95%" />
-        <h3>Does the CS need to verify the edit you just made?</h3>
-        <button data-toggle="collapse" data-target="#verifyYes">Yes</button>
-
-        <div id="verifyYes" class="collapse">
-          <ul>
-            <li>Add 'scheduled' template message to work notes</li>
-            <li>Add CS name to the work notes recipients</li>
-            <li>Changes ticket state to 'scheduled'</li>
-            <li>Enter time and save.</li>
-            <li>Wait for CS to verify the edit is correct and to their specifications (24 hours)- start here 24/schd.</li>
-            <li>Did CS post comment for a further change?
-              <br /><button data-toggle="collapse" data-target="#verifyCommentsYes">Yes</button>
-
-              <div id="verifyCommentsYes" class="collapse">
-                <ul>
-                  <li>Go back to editing, above</li>
-                </ul>
-              </div>
-              <button data-toggle="collapse" data-target="#verifyCommentsNo">No</button>
-
-              <div id="verifyCommentsNo" class="collapse">
-                <ul>
-                  <li>Remove CS name from work notes recipients</li>
-                  <li>Continue, below.</li>
-                </ul>
-              </div>
-
-            </li>
-          </ul>
-        </div>
-        <button data-toggle="collapse" data-target="#verifyNo">No (if this is one of your child tickets)</button>
-
-        <div id="verifyNo" class="collapse">
-          <ul>
-            <li>Remove CS name from ticket</li>
-            <li>'Save' ticket</li>
-            <li>Continue, below.</li>
-          </ul>
-        </div>
-        <h3>Is this a Client 5 course?</h3>
-        <button data-toggle="collapse" data-target="#client5Yes">Yes</button>
-
-        <div id="client5Yes" class="collapse">
-          <ul>
-            <li>Remove CS name from ticket</li>
-            <li>Fill out Client 5 form and copy 'email address' message</li>
-            <li>Insert note into work notes stating that Client 5 notification sent (and paste 'email address' message)</li>
-            <li>Insert time</li>
-            <li>Click 'save'</li>
-          </ul>
-        </div>
-        <button data-toggle="collapse" data-target="#client5No">No</button>
-
-        <div id="client5No" class="collapse">
-          <ul>
-            <li>Continue, below.</li>
-          </ul>
-        </div>
-        <h3>Is this an FLVS course?</h3>
-        <button data-toggle="collapse" data-target="#isFlvsYes">Yes</button>
-
-        <div id="isFlvsYes" class="collapse">
-          <ul>
-            <li>Is this a ticket created by you?
-              <br /><button data-toggle="collapse" data-target="#ticketByUYes">Yes</button>
-
-              <div id="ticketByUYes" class="collapse">
-                <ul>
-                  <li>Designate close code</li>
-                  <li>Paste resolution into close notes</li>
-                  <li>Put time in ticket</li>
-                  <li>Change state to resolved and 'save' ticket</li>
-                </ul>
-              </div>
-              <button data-toggle="collapse" data-target="#ticketByUNo">No</button>
-
-              <div id="ticketByUNo" class="collapse">
-                <ul>
-                  <li>Paste resolution into work notes</li>
-                  <li>Extract CS name</li>
-                  <li>Designate close code</li>
-                  <li>Insert 'Solved' template message into close notes</li>
-                  <li>Insert time worked</li>
-                  <li>Change ticket state to 'Resolved' and <strong>save</strong> ticket</li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <button data-toggle="collapse" data-target="#isFlvsNo">No</button>
-
-        <div id="isFlvsNo" class="collapse">
-          <ul>
-            <li>Change ticket state to 'Active'</li>
-            <li>Paste resolution into work notes</li>
-            <li>Remove your name from 'Assigned to'</li>
-            <li>Change 'Assignment group' to appropriate GS group (usually GS Global Client Notification)</li>
-            <li>Enter time and 'save' ticket</li>
-          </ul>
-        </div>
-        <h3>Is this a child ticket</h3>
-        <button data-toggle="collapse" data-target="#childYes">Yes</button>
-
-        <div id="childYes" class="collapse">
-          <ul>
-            <li>Are there any other child tickets that you need to finish editing?
-              <br /><button data-toggle="collapse" data-target="#otherChildYes">Yes</button>
-
-              <div id="otherChildYes" class="collapse">
-                <ul>
-                  <li>edit them (go back to the top of the edit checklist)</li>
-                </ul>
-              </div>
-              <button data-toggle="collapse" data-target="#otherChildNo">No</button>
-
-              <div id="otherChildNo" class="collapse">
-                <ul>
-                  <li>You are done</li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <button data-toggle="collapse" data-target="#childNo">No</button>
-
-        <div id="childNo" class="collapse">
-          <ul>
-            <li>From the parent ticket go to the 'related courses' section</li>
-            <li>Verify which courses truly need the edit (you'll have to go into each course and check)</li>
-            <li>'Check mark' any related courses that need the edit.</li>
-            <li>Go to the top of the page and copy the main ticket number</li>
-            <li>Go back to the bottom of the 'related courses' section.</li>
-            <li>In the 'actions on selected rows' dropdown, choose 'create incidents'</li>
-            <li>Paste in the ticket number and wait for about 3 seconds and click 'update' button</li>
-            <li>After the page updates, go to the 'child incidents' sections of the ticket</li>
-            <li><strong>For each</strong> of the child tickets that you have created, you need to change each of their 'short descriptions' to match the actual course of the ticket (the 'short description' is copied from the parent ticket, so it will originally
-              have the wrong course number and version number---you need to change this in each of the child tickets you created)</li>
-            <li>Edit each child ticket</li>
-          </ul>
-        </div>
-        <br />
-        <br />
-
-
-
-
 
 
       </div>
