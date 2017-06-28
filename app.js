@@ -14,9 +14,6 @@
   });
 
   app.controller('WorkFlow', function () {
-    function WorkFlow($scope) {
-
-    }
   });
 
 })();

@@ -17,8 +17,6 @@
   <script src="https://code.angularjs.org/1.5.8/angular-route.min.js">
   </script>
   <script src="https://code.angularjs.org/1.5.8/angular-resource.min.js"></script>
-  <script src="app.js">
-  </script>
 </head>
 
 <body>
@@ -97,7 +95,7 @@
         <li><a href="https://flvs1.sharepoint.com/teams/EPMO/EPMO/_layouts/15/start.aspx#/Shared%20Documents/Forms/AllItems.aspx">EPMO Docs</a></li>
       </div>
       <div ng-show="tab.isSet(3)">
-        <div ng-controller="WorkFlow">
+        <div ng-controller="WorkFlow as flow">
           <div>
             <legend>Format ticket</legend>
             <input type="checkbox" />Make sure category and top information is correct.<br />
@@ -408,6 +406,7 @@
         <li><a href="http://www.palermo4.com/post/HTML5-Apps-70-480.aspx">Michael Palermo Blog</a></li>
         <li><a href="http://eloquentjavascript.net/index.html">Eloquent JavaScript</a></li>
         <li><a href="https://www.udemy.com/home/my-courses/">Udemy</a></li>
+        <li><a href="https://thinkster.io/a-better-way-to-learn-angularjs">A Better Way to Learn AngularJS</a></li>
       </div>
       <div ng-show="tab.isSet(6)">
         <li><a href="http://weather.cod.edu/satrad/nexrad/index.php?type=MLB-N0Q-0-6">Radar</a></li>
@@ -426,6 +425,7 @@
       </div>
     </section>
   </div>
+  <script src="app.js"></script>
 </body>
 
 </html>
