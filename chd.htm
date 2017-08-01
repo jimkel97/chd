@@ -96,12 +96,13 @@
         <li><a href="https://flvs1.sharepoint.com/teams/EPMO/EPMO/_layouts/15/start.aspx#/Shared%20Documents/Forms/AllItems.aspx">EPMO Docs</a></li>
       </div>
       <div ng-show="tab.isSet(3)">
-        <p>Changes being made.  Will be back soon!</p>
-        <!-- <div ng-controller="WorkFlow as flow">
+        <p>Changes being made. Will be back soon!</p>
+        <div ng-controller="WorkFlow as flow">
           <div>
             <legend>Format ticket</legend>
             <input type="checkbox" />Make sure category and top information is correct.<br />
-            <input type="checkbox" ng-click="showFormIssue = !showFormIssue" />Format Short Description…short description should be in format of&hellip;
+            <input type="checkbox" ng-click="showFormIssue = !showFormIssue" />Format Short Description…short description
+            should be in format of&hellip;
             <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3209 v14 - Exam: 4.02/q12 - Answer choice incorrect
             <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3209 v14 - Lesson: 4.02/p4 - Spelling error<br />
           </div>
@@ -186,10 +187,13 @@
             <input type="checkbox" />Change state to “Awaiting User Info”<br />
             <input type="checkbox" />Send canned comment to customer via the "Additional Comments" box<br />
             <input type="checkbox" />Wait for customer to respond<br />
-            <input type="checkbox" />Keep trying for 3 days (resend the message each time). If this is a student ticket, make sure you try a phone call at least once<br />
+            <input type="checkbox" />Keep trying for 3 days (resend the message each time). If this is a student ticket,
+            make sure you try a phone call at least once<br />
             <br /> Does the customer finally respond?<br />
-            <input type="checkbox" ng-click="showFormMoreinfoYesFlvsyesRespondsyes = !showFormMoreinfoYesFlvsyesRespondsyes" />Yes<br />
-            <input type="checkbox" ng-click="showFormMoreinfoYesFlvsyesRespondsno = !showFormMoreinfoYesFlvsyesRespondsno" />No<br />
+            <input type="checkbox" ng-click="showFormMoreinfoYesFlvsyesRespondsyes = !showFormMoreinfoYesFlvsyesRespondsyes" />Yes<br
+            />
+            <input type="checkbox" ng-click="showFormMoreinfoYesFlvsyesRespondsno = !showFormMoreinfoYesFlvsyesRespondsno" />No<br
+            />
           </form>
           <br />
           <form ng-show="showFormMoreinfoYesFlvsyesRespondsyes">
@@ -224,7 +228,8 @@
             <input type="checkbox" />Insert time worked<br />
             <input type="checkbox" />Click 'save and assign to CS'<br />
             <input type="checkbox" />You are done until the ticket comes back to you from the CS<br />
-            <input type="checkbox" ng-click="showFormEdit = !showFormEdit" />After the CS responds, and you are ready to edit, check this box<br />
+            <input type="checkbox" ng-click="showFormEdit = !showFormEdit" />After the CS responds, and you are ready to
+            edit, check this box<br />
           </form>
           <br />
           <form ng-show="showFormEdit">
@@ -247,23 +252,29 @@
             <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>ACTION:</strong> Q23 - Replace word in answer choice 2
             <br />
             <input type="checkbox" />In Master manager click the 'modify' button on the exam question<br />
-            <input type="checkbox" />For your 'Resolution' template, copy the exact question stem and answer choices from MM into the 'old' and 'new' sections (don't forget to indication the correct answer in <strong>bold</strong>)<br />
-            <input type="checkbox" />On your 'Resolution' template, edit the 'new'. Make sure you mark the changes from the 'old' and 'new' in red.<br />
+            <input type="checkbox" />For your 'Resolution' template, copy the exact question stem and answer choices from
+            MM into the 'old' and 'new' sections (don't forget to indication the correct answer in <strong>bold</strong>)<br
+            />
+            <input type="checkbox" />On your 'Resolution' template, edit the 'new'. Make sure you mark the changes from the
+            'old' and 'new' in red.<br />
             <input type="checkbox" />Copy your 'new' changes into the exam in Master Manager.<br />
             <input type="checkbox" />Click 'Submit' in Master Manager to save the edit<br />
             <input type="checkbox" />Wait for the page to refresh, review to make sure the edit looks correct.<br />
             <input type="checkbox" />Close the exam page.<br />
-            <input type="checkbox" ng-click="showFormCsverify = !showFormCsverify" />In the main MM window, sync development to production.<br />
+            <input type="checkbox" ng-click="showFormCsverify = !showFormCsverify" />In the main MM window, sync development
+            to production.<br />
           </form>
           <br />
           <form ng-show="showFormEditcontent">
-            <input type="checkbox" ng-click "showFormCsverify = !showFormCsverify" />Content Edit steps coming soon (click to continue)<br />
+            <input type="checkbox" ng-click "showFormCsverify = !showFormCsverify" />Content Edit steps coming soon (click
+            to continue)<br />
           </form>
           <br />
           <form ng-show="showFormCsverify">
             <legend>Does the CS need to verify the edit you just made?</legend>
             <input type="checkbox" ng-click="showFormCsverifyYes = !showFormCsverifyYes" />Yes<br />
-            <input type="checkbox" ng-click="showFormCsverifyNo = !showFormCsverifyNo" />No (if this is one of your child tickets)
+            <input type="checkbox" ng-click="showFormCsverifyNo = !showFormCsverifyNo" />No (if this is one of your child
+            tickets)
             <br />
           </form>
           <br />
@@ -272,7 +283,8 @@
             <input type="checkbox" />Add CS name to the work notes recipients<br />
             <input type="checkbox" />Changes ticket state to 'scheduled'<br />
             <input type="checkbox" />Enter time and save.<br />
-            <input type="checkbox" />Wait for CS to verify the edit is correct and to their specifications (24 hours)- start here 24/schd.<br /><br /> Did CS post comment for a further change?<br />
+            <input type="checkbox" />Wait for CS to verify the edit is correct and to their specifications (24 hours)- start
+            here 24/schd.<br /><br /> Did CS post comment for a further change?<br />
             <input type="checkbox" ng-click="showFormCsverifyYesChangeyes = !showFormCsverifyYesChangeyes" />Yes<br />
             <input type="checkbox" ng-click="showFormCsverifyYesChangeno = !showFormCsverifyYesChangeno" />No<br />
           </form>
@@ -299,7 +311,8 @@
           <form ng-show="showFormC5Yes">
             <input type="checkbox" />Remove CS name from ticket<br />
             <input type="checkbox" />Fill out Client 5 form and copy 'email address' message<br />
-            <input type="checkbox" />Insert note into work notes stating that Client 5 notification sent (and paste 'email address' message)<br />
+            <input type="checkbox" />Insert note into work notes stating that Client 5 notification sent (and paste 'email
+            address' message)<br />
             <input type="checkbox" />Insert time<br />
             <input type="checkbox" ng-click="showFormisFLVS = !showFormisFLVS" />Click 'save'
             <br />
@@ -321,22 +334,25 @@
             <input type="checkbox" />Designate close code<br />
             <input type="checkbox" />Paste resolution into close notes<br />
             <input type="checkbox" />Put time in ticket<br />
-            <input type="checkbox" ng-click="showFormChild =! showFormChild" />Change state to resolved and 'save' ticket<br />
+            <input type="checkbox" ng-click="showFormChild =! showFormChild" />Change state to resolved and 'save' ticket<br
+            />
           </form>
           <br />
           <form ng-show="showFormisFLVSYesCreatedno">
-            <input type="checkbox" />Change ticket state to 'Active'<br />
             <input type="checkbox" />Paste resolution into work notes<br />
-            <input type="checkbox" />Remove your name from 'Assigned to'<br />
-            <input type="checkbox" />Change 'Assignment group' to appropriate GS group (usually GS Global Client Notification)<br />
-            <input type="checkbox" ng-click="showFormChild = !showFormChild" />Enter time and 'save' ticket<br />
+            <input type="checkbox" />Extract CS name<br />
+            <input type="checkbox" />Designate close code<br />
+            <input type="checkbox" />Insert 'Solved' template message into close notes<br/>
+            <input type="checkbox" />Insert time worked<br/>
+            <input type="checkbox" ng-click="showFormChild = !showFormChild" />Change ticket state to 'Resolved' and <strong>save</strong> ticket<br />
           </form>
           <br />
           <form ng-show="showFormisFLVSNo">
             <input type="checkbox" />Change ticket state to 'Active'<br />
             <input type="checkbox" />Paste resolution into work notes<br />
             <input type="checkbox" />Remove your name from 'Assigned to'<br />
-            <input type="checkbox" />Change 'Assignment group' to appropriate GS group (usually GS Global Client Notification)<br />
+            <input type="checkbox" />Change 'Assignment group' to appropriate GS group (usually GS Global Client Notification)<br
+            />
             <input type="checkbox" ng-click="showFormChild = !showFormChild" />Enter time and 'save' ticket<br />
           </form>
           <br />
@@ -362,22 +378,23 @@
           <br />
           <form ng-show="showFormChildNo">
             <input type="checkbox" />From the parent ticket go to the 'related courses' section<br />
-            <input type="checkbox" />Verify which courses truly need the edit (you'll have to go into each course and check)<br />
+            <input type="checkbox" />Verify which courses truly need the edit (you'll have to go into each course and check)<br
+            />
             <input type="checkbox" />'Check mark' any related courses that need the edit.<br />
             <input type="checkbox" />Go to the top of the page and copy the main ticket number<br />
             <input type="checkbox" />Go back to the bottom of the 'related courses' section.<br />
             <input type="checkbox" />In the 'actions on selected rows' dropdown, choose 'create incidents'<br />
-            <input type="checkbox" />Paste in the ticket number and wait for about 3 seconds and click 'update' button<br />
+            <input type="checkbox" />Paste in the ticket number and wait for about 3 seconds and click 'update' button<br
+            />
             <input type="checkbox" />After the page updates, go to the 'child incidents' sections of the ticket<br />
-            <input type="checkbox" /><strong>For each</strong> of the child tickets that you have created, you need to change each of their 'short descriptions' to match the actual course of the ticket (the 'short description' is copied from the parent
-            ticket, so it will originally have the wrong course number and version number---you need to change this in each of the child tickets you created)<br />
+            <input type="checkbox" /><strong>For each</strong> of the child tickets that you have created, you need to change
+            each of their 'short descriptions' to match the actual course of the ticket (the 'short description' is copied
+            from the parent ticket, so it will originally have the wrong course number and version number---you need to change
+            this in each of the child tickets you created)<br />
             <input type="checkbox" />Edit each child ticket<br />
           </form>
 
-
-
-
-        </div> -->
+        </div>
 
 
       </div>
