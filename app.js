@@ -1,19 +1,22 @@
-(function () {
+(function() {
   var app = angular.module('myApp', []);
 
-  app.controller('TabController', function () {
+  app.controller('TabController', function() {
     this.tab = 1;
 
-    this.setTab = function (tab) {
+    this.setTab = function(tab) {
       this.tab = tab;
     };
 
-    this.isSet = function (tab) {
+    this.isSet = function(tab) {
       return (this.tab === tab);
     };
   });
 
-  app.controller('WorkFlow', function () {
+  app.controller('WorkFlow', function() {
+    function WorkFlow($scope) {
+
+    }
   });
 
 })();
