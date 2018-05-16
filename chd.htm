@@ -2,142 +2,173 @@
 <html ng-app="myApp">
 
 <head>
-  <title>CHD Links</title>
-  <meta charset="utf-8">
-  <!-- To ensure proper rendering and touch zooming -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- load bootstrap and fontawesome via CDN -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-  <META NAME="robots" CONTENT="noindex,nofollow">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <!-- load angular via CDN -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js">
-  </script>
-  <script src="https://code.angularjs.org/1.5.8/angular-route.min.js">
-  </script>
-  <script src="https://code.angularjs.org/1.5.8/angular-resource.min.js"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
-  </style>
-  <link rel="stylesheet" href="font.css">
+    <title>CHD Links</title>
+    <meta charset="utf-8">
+    <!-- To ensure proper rendering and touch zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- load bootstrap and fontawesome via CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <META NAME="robots" CONTENT="noindex,nofollow">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- load angular via CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js">
+    </script>
+    <script src="https://code.angularjs.org/1.5.8/angular-route.min.js">
+    </script>
+    <script src="https://code.angularjs.org/1.5.8/angular-resource.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
+    </style>
+    <link rel="stylesheet" href="font.css">
+      <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+      <script src="app.js"></script>
 </head>
 
 <body>
-  <div class="container">
-    <header class="font">
-      <h1 class="text-center">
+    <div class="container">
+        <header class="font">
+            <h1 class="text-center">
 
-        Some Most Awesome CHD Links
-      </h1>
-      <h2 class="text-center">
-        &mdash; using Angular &mdash;
-      </h2>
-    </header>
-    <section ng-controller="TabController as tab">
-      <ul class="nav nav-pills">
-        <li ng-class="{ active:tab.isSet(1) }">
-          <a href="" ng-click="tab.setTab(1)">
-            Tools
-          </a>
-        </li>
-        <li ng-class="{ active:tab.isSet(2) }">
-          <a href="" ng-click="tab.setTab(2)">
-            More Tools
-          </a>
-        </li>
-        <li ng-class="{ active:tab.isSet(3) }">
-          <a href="" ng-click="tab.setTab(3)">
-            Workflow
-          </a>
-        </li>
-        <li ng-class="{ active:tab.isSet(4) }">
-          <a href="" ng-click="tab.setTab(4)">
-            Web Dev
-          </a>
-        </li>
-        <li ng-class="{ active:tab.isSet(5) }">
-          <a href="" ng-click="tab.setTab(5)">
-            Learning
-          </a>
-        </li>
-        <li ng-class="{ active:tab.isSet(6) }">
-          <a href="" ng-click="tab.setTab(6)">
-            Misc
-          </a>
-        </li>
-      </ul>
-      <div ng-show="tab.isSet(1)">
-        <li>
-          <a href="https://flvsprd.service-now.com">ServiceNow</a>
-        </li>
-        <li>
-          <a href="https://app.asana.com/0/53573298305166/list">Course Holds (ASANA)</a>
-        </li>
-        <li>
-          <a href="https://flvs.visualstudio.com/cs/_git/">Visual Studio (FLVS)</a>
-        </li>
-        <li>
-          <a href="https://educatortools.flvs.net/educator_tools/index.html">Master Manager&sol;Client 5</a>
-        </li>
-        <li>
-          <a href="https://outlook.office365.com/owa/?realm=flvs.net&wa=wsignin1.0#path=/mail">Outlook</a>
-        </li>
-        <li>
-          <a href="https://www.myworkday.com/flvs/d/home.htmld">Workday</a>
-        </li>
-        <li>
-          <a href="https://l.flvsgl.com/user/plugins/multi-user/index.php">Link Manager</a>
-        </li>
-        <li>
-          <a href="http://support.edynamiclearning.com/support/tickets">eDynamics Support</a>
-        </li>
-        <li>
-          <a href="https://www.flvsconnect.net/">FLVSConnect</a>
-        </li>
-        <li>
-          <a href="https://clientservicesflvs.slack.com/messages/G2WBZAKCZ/">Slack</a>
-        </li>
-        <li>
-          <a href="http://stopwatch.online-timers.com/multiple-stopwatches">Stopwatch</a>
-        </li>
-        <li>
-          <a href="http://www.mergely.com/editor?ws=1">Text Compare</a>
-        </li>
-      </div>
-      <div ng-show="tab.isSet(2)">
-        <li>
-          <a href="http://http15.ucompass.com/Development/commonResources/translation/myCGIGateway.pl?application=flvs&method=managers">Shell Manager</a>
-        </li>
-        <li>
-          <a href="http://jira.javierlugo.co:8080/secure/Dashboard.jspa">JIRA</a>
-        </li>
-        <li>
-          <a href="http://develop.flvs.net/Collaborate/Course/framework/4.0-presentation/module06/lesson01/06_01_01.htm">LO Addresses</a>
-        </li>
-        <li>
-          <a href="https://sites.google.com/a/fl-vs.org/course-services">CS GSites</a>
-        </li>
-        <li>
-          <a href="http://http15.ucompass.com/tools/aligngradebuilder.cgi">GradeBuilder Align Tool</a>
-        </li>
-        <li>
-          <a href="https://docs.google.com/a/fl-vs.org/spreadsheets/d/1BtyL7XsYovk7y9QAHUzLSJU6ENXn0QJ40GCywRkerIc/edit#gid=0">Time Tracker</a>
-        </li>
-        <li>
-          <a href="https://coffitivity.com/">Coffitivity</a>
-        </li>
-        <li>
-          <a href="http://www.rainymood.com/">Rainy Mood</a>
-        </li>
-        <li>
-          <a href="https://docs.google.com/a/fl-vs.org/document/d/1RNPMk6p6FhfB_KttQOEgxyxLlTBMN1yMmwb-iaZDYwk/edit">Resolution Examples</a>
-        </li>
-        <li>
-          <a href="https://flvs1.sharepoint.com/teams/EPMO/EPMO/_layouts/15/start.aspx#/Shared%20Documents/Forms/AllItems.aspx">EPMO Docs</a>
-        </li>
-      </div>
-      <div ng-show="tab.isSet(3)">
+                Some Most Awesome CHD Links
+            </h1>
+            <h2 class="text-center">
+                &mdash; using Angular &mdash;
+            </h2>
+        </header>
+        <section ng-controller="TabController as tab">
+            <ul class="nav nav-pills">
+                <li ng-class="{ active:tab.isSet(1) }">
+                    <a href="" ng-click="tab.setTab(1)">
+                        Tools
+                    </a>
+                </li>
+                <li ng-class="{ active:tab.isSet(2) }">
+                    <a href="" ng-click="tab.setTab(2)">
+                        More Tools
+                    </a>
+                </li>
+                <li ng-class="{ active:tab.isSet(3) }">
+                    <a href="" ng-click="tab.setTab(3)">
+                        Workflow
+                    </a>
+                </li>
+                <li ng-class="{ active:tab.isSet(4) }">
+                    <a href="" ng-click="tab.setTab(4)">
+                        Web Dev
+                    </a>
+                </li>
+                <li ng-class="{ active:tab.isSet(5) }">
+                    <a href="" ng-click="tab.setTab(5)">
+                        Learning
+                    </a>
+                </li>
+                <li ng-class="{ active:tab.isSet(6) }">
+                    <a href="" ng-click="tab.setTab(6)">
+                        Misc
+                    </a>
+                </li>
+            </ul>
+            <div ng-show="tab.isSet(1)">
+                <li>
+                    <a href="https://flvsprd.service-now.com">ServiceNow</a>
+                </li>
+                <li>
+                    <a href="https://app.asana.com/0/53573298305166/list">Course Holds (ASANA)</a>
+                </li>
+                <li>
+                    <a href="https://flvs.visualstudio.com/cs/_git/">Visual Studio (FLVS)</a>
+                </li>
+                <li>
+                    <a href="https://educatortools.flvs.net/educator_tools/index.html">Master Manager&sol;Client 5</a>
+                </li>
+                <li>
+                    <a href="https://outlook.office365.com/owa/?realm=flvs.net&wa=wsignin1.0#path=/mail">Outlook</a>
+                </li>
+                <li>
+                    <a href="https://www.myworkday.com/flvs/d/home.htmld">Workday</a>
+                </li>
+                <li>
+                    <a href="https://l.flvsgl.com/user/plugins/multi-user/index.php">Link Manager</a>
+                </li>
+                <li>
+                    <a href="http://support.edynamiclearning.com/support/tickets">eDynamics Support</a>
+                </li>
+                <li>
+                    <a href="https://www.flvsconnect.net/">FLVSConnect</a>
+                </li>
+                <li>
+                    <a href="https://clientservicesflvs.slack.com/messages/G2WBZAKCZ/">Slack</a>
+                </li>
+                <li>
+                    <a href="http://stopwatch.online-timers.com/multiple-stopwatches">Stopwatch</a>
+                </li>
+                <li>
+                    <a href="http://www.mergely.com/editor?ws=1">Text Compare</a>
+                </li>
+            </div>
+            <div ng-show="tab.isSet(2)">
+                <li>
+                    <a href="http://http15.ucompass.com/Development/commonResources/translation/myCGIGateway.pl?application=flvs&method=managers">Shell Manager</a>
+                </li>
+                <li>
+                    <a href="http://jira.javierlugo.co:8080/secure/Dashboard.jspa">JIRA</a>
+                </li>
+                <li>
+                    <a href="http://develop.flvs.net/Collaborate/Course/framework/4.0-presentation/module06/lesson01/06_01_01.htm">LO Addresses</a>
+                </li>
+                <li>
+                    <a href="https://sites.google.com/a/fl-vs.org/course-services">CS GSites</a>
+                </li>
+                <li>
+                    <a href="http://http15.ucompass.com/tools/aligngradebuilder.cgi">GradeBuilder Align Tool</a>
+                </li>
+                <li>
+                    <a href="https://docs.google.com/a/fl-vs.org/spreadsheets/d/1BtyL7XsYovk7y9QAHUzLSJU6ENXn0QJ40GCywRkerIc/edit#gid=0">Time Tracker</a>
+                </li>
+                <li>
+                    <a href="https://coffitivity.com/">Coffitivity</a>
+                </li>
+                <li>
+                    <a href="http://www.rainymood.com/">Rainy Mood</a>
+                </li>
+                <li>
+                    <a href="https://docs.google.com/a/fl-vs.org/document/d/1RNPMk6p6FhfB_KttQOEgxyxLlTBMN1yMmwb-iaZDYwk/edit">Resolution Examples</a>
+                </li>
+                <li>
+                    <a href="https://flvs1.sharepoint.com/teams/EPMO/EPMO/_layouts/15/start.aspx#/Shared%20Documents/Forms/AllItems.aspx">EPMO Docs</a>
+                </li>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+            <!-- <div class="parentNode 1">Parent Node 1
+            <div class="childNode">P1 C1</div>
+            <div class="childNode">P1 C2</div>
+            <div class="childNode">P1 C3</div>
+          </div>
+          <div class="parentNode 2">Parent Node 2
+              <div class="childNode">P2 C1</div>
+              <div class="childNode">P2 C2</div>
+              <div class="childNode">P2 C3</div>
+            </div> -->
+
+
+
+
+
+
+
+
+            <!--       <div ng-show="tab.isSet(3)">
         <div ng-controller="WorkFlow as flow">
           <div>
             <legend>Format ticket</legend>
@@ -557,171 +588,171 @@
         </div>
 
 
-      </div>
-      <div ng-show="tab.isSet(4)">
-        <h1>{{ name }}</h1>
+      </div> -->
+            <div ng-show="tab.isSet(4)">
+                <h1>{{ name }}</h1>
 
-        <li>
-          <a href="http://htmlarrows.com/">HTML5 Symbols</a>
-        </li>
-        <li>
-          <a href="https://flvs1.sharepoint.com/teams/curriculum/cs/_layouts/15/WopiFrame.aspx?sourcedoc={F374ED85-56C9-453C-BECF-57AEBD3CE5C7}&file=IDS%20New%20Employee%20Orientation-%20HOME.docx&action=default&DefaultItemOpen=1">IDS New Employee Orientation</a>
-        </li>
-        <li>
-          <a href="https://shiftedit.net">ShiftEdit</a>
-        </li>
-        <li>
-          <a href="http://tools.oratory.com/altcodes.html">Alt Characters Codes</a>
-        </li>
-        <li>
-          <a href="http://www.periodni.com/mathematical_and_chemical_equations_on_web.html">MATHEMATICAL AND CHEMICAL EQUATIONS WITH CSS</a>
-        </li>
-        <li>
-          <a href="http://develop.flvs.net/Collaborate/Course/framework/4.0-beta/index.htm">WebDev Cheatsheet v4.0 BETA</a>
-        </li>
-        <li>
-          <a href="http://develop.flvs.net/Collaborate/Course/framework/4.0-presentation/index.htm">WebDev Cheatsheet v4.0</a>
-        </li>
-        <li>
-          <a href="http://develop.flvs.net/Collaborate/Course/framework/3.5/cheatsheet/index.htm">WebDev Cheatsheet v3.5</a>
-        </li>
-        <li>
-          <a href="http://develop.flvs.net/Collaborate/Course/_template/v3.0/cheatsheet/">WebDev Cheatsheet v3.0</a>
-        </li>
-        <li>
-          <a href="http://develop.flvs.net/Collaborate/Course/_template/v2.0/cheatsheet/">WebDev Cheatsheet v2.0</a>
-        </li>
-        <li>
-          <a href="http://develop.flvs.net/collaborate/develop/angular/index.htm">WebDev AngularJS Assets Page</a>
-        </li>
-        <li>
-          <a href="https://my.floridavirtualschool.net/Departments/CurriculumServices/CD/DesignTeam/pages/Web%20Development.aspx">Design Team Home</a>
-        </li>
-        <li>
-          <a href="http://hslpicker.com/#0f0">HSL Color Picker</a>
-        </li>
-        <li>
-          <a href="http://quirktools.com/screenfly/">Responsive Design Tester</a>
-        </li>
-        <li>
-          <a href="http://builtwith.com/">Built with ...</a>
-        </li>
-        <li>
-          <a href="http://netrenderer.com/">IE Compatability Checker</a>
-        </li>
-        <li>
-          <a href="http://detechter.com/free-htmlcssjavascript-cheat-sheets-for-web-designers/">Cheat Sheets</a>
-        </li>
-        <li>
-          <a href="http://roundups.co">Designer Newsletters</a>
-        </li>
-        <li>
-          <a href="https://plainjs.com">Vanilla javaScripts</a>
-        </li>
-      </div>
-      <div ng-show="tab.isSet(5)">
-        <li>
-          <a href="https://app.pluralsight.com/library/">Pluralsight</a>
-        </li>
-        <li>
-          <a href="http://blog.froont.com/positioning-in-web-design/?utm_content=bufferc872f&utm_medium=social&utm_source=plus.google.com&utm_campaign=buffer">CSS Positioning Explained</a>
-        </li>
-        <li>
-          <a href="http://www.microsoftvirtualacademy.com/">Microsoft Virtual Academy</a>
-        </li>
-        <li>
-          <a href="http://www.palermo4.com/post/HTML5-Apps-70-480.aspx">Michael Palermo Blog</a>
-        </li>
-        <li>
-          <a href="http://eloquentjavascript.net/index.html">Eloquent JavaScript</a>
-        </li>
-        <li>
-          <a href="https://www.udemy.com/home/my-courses/">Udemy</a>
-        </li>
-        <li>
-          <a href="https://thinkster.io/a-better-way-to-learn-angularjs">A Better Way to Learn AngularJS</a>
-        </li>
-        <li>
-          <a href="https://gridbyexample.com">Grid by Example</a>
-        </li>
-      </div>
-      <div ng-show="tab.isSet(6)">
-        <li>
-          <a href="https://s3.amazonaws.com/static.baron.web.apps/digitial_wx/pages/n2.adaptive/map/index.html?initjson=https://s3.amazonaws.com/static.baron.web.apps/digitial_wx/widgets/dcms/348f2ef2-4cb4-41a4-890d-a4c91771b910/live/init.js&initjsonvar=initdata">Radar (desktop)</a>
-        </li>
-        <li>
-          <a href="http://weather.cod.edu/satrad/nexrad/index.php?type=MLB-N0Q-0-6">Radar (responsive)</a>
-        </li>
-        <li>
-          <a href="http://weather.weatherbug.com/alerts/spark/?center=28.6110483,-81.6448975,9">Lightning</a>
-        </li>
-        <li>
-          <a href="http://weather.weatherbug.com/forecasts/now/casselberry-fl-32707">WeatherBug</a>
-        </li>
-        <li>
-          <a href="https://weatherspark.com/forecasts/noaa/USA/32707/FL/Casselberry">WeatherSpark</a>
-        </li>
-        <li>
-          <a href="http://zoomradar.com/">ZoomRadar</a>
-        </li>
-        <li>
-          <a href="http://www.wunderground.com/wundermap/?lat=28.66264725&lon=-81.31276703&zoom=8&pin=Casselberry%2c%20FL&rad=1&wxsn=0&svr=0&cams=0&sat=0&riv=0&mm=0&hur=0">WunderMap</a>
-        </li>
-        <li>
-          <a href="http://spaghettimodels.com/">Hurricanes</a>
-        </li>
-        <h3>News</h3>
-        <li>
-          <a href="http://feedly.com/i/my">Feedly</a>
-        </li>
-        <li>
-          <a href="https://getpocket.com/a/queue/">Pocket</a>
-        </li>
-        <li>
-          <a href="http://mynews13.com/content/news/cfnews13/news/local-headlines.html">Orlando News</a>
-        </li>
-        <h3>Entertainment</h3>
-        <li>
-          <a href="http://www.iheart.com/my/stations/">iHeartRADIO</a>
-        </li>
-        <h3>Web Cams</h3>
-        <li>
-          <a href="http://www.windjammerresort.com/webcam.html">Lauderdale</a>
-        </li>
-        <li>
-          <a href="https://www.islandinnsanibel.com/sanibel-island-beach-cam/">Sanibel</a>
-        </li>
-        <li>
-          <a href="https://www.naplespanorama.org">Naples Pier Cam</a>
-        </li>
-        <li>
-          <a href="http://www.miamiairportcam.com">MIA</a>
-        </li>
-        <li>
-          <a href="http://airportwebcams.net/cams/lax-webcam.html">LAX Dual</a>
-        </li>
-        <li>
-          <a href="http://ipcamlive.com/player/player.php?alias=5556d41668a81&autoplay=1&mute=0">LAX 1</a>
-        </li>
-        <li>
-          <a href="http://ipcamlive.com/player/player.php?alias=5556e0f63563c&autoplay=1&mute=0">LAX 2</a>
-        </li>
-        <li>
-          <a href="https://www.seejh.com/webcams/colorado/aspen/ski-mountain-gondola">Aspen</a>
-        </li>
-        <li>
-          <a href="https://www.seejh.com/webcams/jacksonhole/grandteton/egvb">Grand Tetons PTZ</a>
-        </li>
-        <li>
-          <a href="https://www.seejh.com/webcams/tetonvalley/grandtarghee/summit">Grand Targhee PTZ</a>
-        </li>
-        <li>
-          <a href="https://explore.org/livecams/santa-monica-beach/santa-monica-beach-cam">Santa Monica Beach</a>
-        </li>
-      </div>
-    </section>
-  </div>
-  <script src="app.js"></script>
+                <li>
+                    <a href="http://htmlarrows.com/">HTML5 Symbols</a>
+                </li>
+                <li>
+                    <a href="https://flvs1.sharepoint.com/teams/curriculum/cs/_layouts/15/WopiFrame.aspx?sourcedoc={F374ED85-56C9-453C-BECF-57AEBD3CE5C7}&file=IDS%20New%20Employee%20Orientation-%20HOME.docx&action=default&DefaultItemOpen=1">IDS New Employee Orientation</a>
+                </li>
+                <li>
+                    <a href="https://shiftedit.net">ShiftEdit</a>
+                </li>
+                <li>
+                    <a href="http://tools.oratory.com/altcodes.html">Alt Characters Codes</a>
+                </li>
+                <li>
+                    <a href="http://www.periodni.com/mathematical_and_chemical_equations_on_web.html">MATHEMATICAL AND CHEMICAL EQUATIONS WITH CSS</a>
+                </li>
+                <li>
+                    <a href="http://develop.flvs.net/Collaborate/Course/framework/4.0-beta/index.htm">WebDev Cheatsheet v4.0 BETA</a>
+                </li>
+                <li>
+                    <a href="http://develop.flvs.net/Collaborate/Course/framework/4.0-presentation/index.htm">WebDev Cheatsheet v4.0</a>
+                </li>
+                <li>
+                    <a href="http://develop.flvs.net/Collaborate/Course/framework/3.5/cheatsheet/index.htm">WebDev Cheatsheet v3.5</a>
+                </li>
+                <li>
+                    <a href="http://develop.flvs.net/Collaborate/Course/_template/v3.0/cheatsheet/">WebDev Cheatsheet v3.0</a>
+                </li>
+                <li>
+                    <a href="http://develop.flvs.net/Collaborate/Course/_template/v2.0/cheatsheet/">WebDev Cheatsheet v2.0</a>
+                </li>
+                <li>
+                    <a href="http://develop.flvs.net/collaborate/develop/angular/index.htm">WebDev AngularJS Assets Page</a>
+                </li>
+                <li>
+                    <a href="https://my.floridavirtualschool.net/Departments/CurriculumServices/CD/DesignTeam/pages/Web%20Development.aspx">Design Team Home</a>
+                </li>
+                <li>
+                    <a href="http://hslpicker.com/#0f0">HSL Color Picker</a>
+                </li>
+                <li>
+                    <a href="http://quirktools.com/screenfly/">Responsive Design Tester</a>
+                </li>
+                <li>
+                    <a href="http://builtwith.com/">Built with ...</a>
+                </li>
+                <li>
+                    <a href="http://netrenderer.com/">IE Compatability Checker</a>
+                </li>
+                <li>
+                    <a href="http://detechter.com/free-htmlcssjavascript-cheat-sheets-for-web-designers/">Cheat Sheets</a>
+                </li>
+                <li>
+                    <a href="http://roundups.co">Designer Newsletters</a>
+                </li>
+                <li>
+                    <a href="https://plainjs.com">Vanilla javaScripts</a>
+                </li>
+            </div>
+            <div ng-show="tab.isSet(5)">
+                <li>
+                    <a href="https://app.pluralsight.com/library/">Pluralsight</a>
+                </li>
+                <li>
+                    <a href="http://blog.froont.com/positioning-in-web-design/?utm_content=bufferc872f&utm_medium=social&utm_source=plus.google.com&utm_campaign=buffer">CSS Positioning Explained</a>
+                </li>
+                <li>
+                    <a href="http://www.microsoftvirtualacademy.com/">Microsoft Virtual Academy</a>
+                </li>
+                <li>
+                    <a href="http://www.palermo4.com/post/HTML5-Apps-70-480.aspx">Michael Palermo Blog</a>
+                </li>
+                <li>
+                    <a href="http://eloquentjavascript.net/index.html">Eloquent JavaScript</a>
+                </li>
+                <li>
+                    <a href="https://www.udemy.com/home/my-courses/">Udemy</a>
+                </li>
+                <li>
+                    <a href="https://thinkster.io/a-better-way-to-learn-angularjs">A Better Way to Learn AngularJS</a>
+                </li>
+                <li>
+                    <a href="https://gridbyexample.com">Grid by Example</a>
+                </li>
+            </div>
+            <div ng-show="tab.isSet(6)">
+                <li>
+                    <a href="https://s3.amazonaws.com/static.baron.web.apps/digitial_wx/pages/n2.adaptive/map/index.html?initjson=https://s3.amazonaws.com/static.baron.web.apps/digitial_wx/widgets/dcms/348f2ef2-4cb4-41a4-890d-a4c91771b910/live/init.js&initjsonvar=initdata">Radar (desktop)</a>
+                </li>
+                <li>
+                    <a href="http://weather.cod.edu/satrad/nexrad/index.php?type=MLB-N0Q-0-6">Radar (responsive)</a>
+                </li>
+                <li>
+                    <a href="http://weather.weatherbug.com/alerts/spark/?center=28.6110483,-81.6448975,9">Lightning</a>
+                </li>
+                <li>
+                    <a href="http://weather.weatherbug.com/forecasts/now/casselberry-fl-32707">WeatherBug</a>
+                </li>
+                <li>
+                    <a href="https://weatherspark.com/forecasts/noaa/USA/32707/FL/Casselberry">WeatherSpark</a>
+                </li>
+                <li>
+                    <a href="http://zoomradar.com/">ZoomRadar</a>
+                </li>
+                <li>
+                    <a href="http://www.wunderground.com/wundermap/?lat=28.66264725&lon=-81.31276703&zoom=8&pin=Casselberry%2c%20FL&rad=1&wxsn=0&svr=0&cams=0&sat=0&riv=0&mm=0&hur=0">WunderMap</a>
+                </li>
+                <li>
+                    <a href="http://spaghettimodels.com/">Hurricanes</a>
+                </li>
+                <h3>News</h3>
+                <li>
+                    <a href="http://feedly.com/i/my">Feedly</a>
+                </li>
+                <li>
+                    <a href="https://getpocket.com/a/queue/">Pocket</a>
+                </li>
+                <li>
+                    <a href="http://mynews13.com/content/news/cfnews13/news/local-headlines.html">Orlando News</a>
+                </li>
+                <h3>Entertainment</h3>
+                <li>
+                    <a href="http://www.iheart.com/my/stations/">iHeartRADIO</a>
+                </li>
+                <h3>Web Cams</h3>
+                <li>
+                    <a href="http://www.windjammerresort.com/webcam.html">Lauderdale</a>
+                </li>
+                <li>
+                    <a href="https://www.islandinnsanibel.com/sanibel-island-beach-cam/">Sanibel</a>
+                </li>
+                <li>
+                    <a href="https://www.naplespanorama.org">Naples Pier Cam</a>
+                </li>
+                <li>
+                    <a href="http://www.miamiairportcam.com">MIA</a>
+                </li>
+                <li>
+                    <a href="http://airportwebcams.net/cams/lax-webcam.html">LAX Dual</a>
+                </li>
+                <li>
+                    <a href="http://ipcamlive.com/player/player.php?alias=5556d41668a81&autoplay=1&mute=0">LAX 1</a>
+                </li>
+                <li>
+                    <a href="http://ipcamlive.com/player/player.php?alias=5556e0f63563c&autoplay=1&mute=0">LAX 2</a>
+                </li>
+                <li>
+                    <a href="https://www.seejh.com/webcams/colorado/aspen/ski-mountain-gondola">Aspen</a>
+                </li>
+                <li>
+                    <a href="https://www.seejh.com/webcams/jacksonhole/grandteton/egvb">Grand Tetons PTZ</a>
+                </li>
+                <li>
+                    <a href="https://www.seejh.com/webcams/tetonvalley/grandtarghee/summit">Grand Targhee PTZ</a>
+                </li>
+                <li>
+                    <a href="https://explore.org/livecams/santa-monica-beach/santa-monica-beach-cam">Santa Monica Beach</a>
+                </li>
+            </div>
+        </section>
+    </div>
+    <script src="app.js"></script>
 </body>
 
 </html>
