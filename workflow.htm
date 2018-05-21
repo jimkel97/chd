@@ -2,55 +2,31 @@
 <html>
 
 <head>
-  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-  <script src="workflow.js"></script>
   <link rel="stylesheet" href="workflow.css">
   <title>Testing Some jQuery Functionality</title>
 </head>
 
 <body>
-  <div class="verifyP 1">Format the ticket
-    <div class="verifyC">Make sure category and top information is correct</div>
-    <div class="verifyC">Format Short Description&hellip;short description should be in format of&hellip;
-      <br />
-      <span class="text-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3209 v14 - Exam: 4.02/q12 - Answer choice incorrect
-        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3209 v14 - Lesson: 4.02/p4 - Spelling error</span>
-    </div>
-    <div class="verifyC">Verify that this is really our issue (If
-      <em>NOT</em>, then assign the ticket to Applications Services)</div>
-    <div class="verifyC">Verify that the issue actually exists.</div>
-    <div class="verifyC">Verify that the course is
-      <em>NOT</em> on hold.</div>
+<body>
+<p>
+  Are you having fun?
+  </p>
+  <button onclick="myFunction()">Yes</button>
+  <div id="myDIV">
+<p>
+  Good
+  </p>
   </div>
-
-  <div class="editP 2">Editing an FLVS ticket
-    <div class="editC">P2 C1</div>
-    <div class="editC">P2 C2</div>
-    <div class="editC">P2 C3</div>
-  </div>
-
-
-
-
-
-
-
-  <!-- <div class="parentNode 1">Parent Node 1
-            <div class="childNode">P1 C1</div>
-            <div class="childNode">P1 C2</div>
-            <div class="childNode">P1 C3</div>
-          </div>
-          <div class="parentNode 2">Parent Node 2
-              <div class="childNode">P2 C1</div>
-              <div class="childNode">P2 C2</div>
-              <div class="childNode">P2 C3</div>
-            </div> -->
-
-
-  
-
-
-
+<script>
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.innerHTML === "Hello") {
+        x.innerHTML = "Swapped text!";
+    } else {
+        x.innerHTML = "Hello";
+    }
+}
+</script>
 </body>
 
 </html>
