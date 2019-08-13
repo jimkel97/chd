@@ -2,25 +2,28 @@
 
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
+        <head>
+                <meta charset="utf-8">
 
-    <title>Some Most Excellent Course Services Resources</title>
-    <meta name="description" content="Course Services Links">
-    <meta name="author" content="Jim Brothers">
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <link rel="stylesheet" href="css/styles.css?v=1.0">
+                <title>Some Most Excellent Course Services Resources</title>
+                <meta name="description" content="Course Services Links">
+                <meta name="author" content="Jim Brothers">
+                <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+                <link rel="stylesheet" href="css/styles.css?v=1.0">
 
-</head>
+        </head>
 
-<body>
-    <div id="app">
-        <div class="nav-bar">
-        </div>
+        <body>
+                <div id="app">
+                        <div class="nav-bar">
+                                <ul>
+                                        <li v-for="category in categories">{{ category[0] }}</li>
+                                </ul>
+                        </div>
 
-    </div>
+                </div>
 
-    <script src="js/scripts.js"></script>
-</body>
+                <script src="js/scripts.js"></script>
+        </body>
 
 </html>

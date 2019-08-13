@@ -73,3 +73,11 @@ body {
     width: 100%;
     height: 60px;
   }
+
+  .nav-bar > ul > li {
+    display: inline-block;
+    margin: 15px 50px;
+    zoom:1;
+    *display:inline;
+    /* this fix is needed for IE7- */
+}
