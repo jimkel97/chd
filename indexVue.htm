@@ -16,11 +16,13 @@
         <body>
                 <div id="app">
                         <div class="nav-bar">
-                                <ul>
-                                        <li v-for="category in categories">{{ category[0] }}</li>
-                                </ul>
                         </div>
-
+                        <!-- practice show hide -->
+                        <button v-on:click="disappear">
+                                Hide the text
+                        </button>
+                        <p v-if="isVis">some stuff</p>
+                        <!-- end practice show hide -->
                 </div>
 
                 <script src="js/scripts.js"></script>
