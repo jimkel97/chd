@@ -3662,7 +3662,7 @@ var PageLoader = /*#__PURE__*/function () {
     value: function loadRoute(route) {
       route = normalizeRoute(route);
       var scriptRoute = route === '/' ? '/index.js' : route + ".js";
-      var url = this.assetPrefix + "/_next/static/" + encodeURIComponent(this.buildId) + "/pages" + encodeURI(scriptRoute);
+      var url = this.assetPrefix + "./_next/static/" + encodeURIComponent(this.buildId) + "/pages" + encodeURI(scriptRoute);
       this.loadScript(url, route, true);
     }
   }, {
@@ -3766,7 +3766,7 @@ var PageLoader = /*#__PURE__*/function () {
 
         if (false) {}
 
-        url = this.assetPrefix + "/_next/static/" + encodeURIComponent(this.buildId) + "/pages" + encodeURI(scriptRoute);
+        url = this.assetPrefix + "./_next/static/" + encodeURIComponent(this.buildId) + "/pages" + encodeURI(scriptRoute);
       }
 
       return Promise.all(document.querySelector("link[rel=\"" + relPrefetch + "\"][href^=\"" + url + "\"], script[data-next-page=\"" + route + "\"]") ? [] : [appendLink(url, relPrefetch, url.match(/\.css$/) ? 'style' : 'script'),  false && false]).then( // do not return any data
